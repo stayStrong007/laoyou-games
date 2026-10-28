@@ -78,5 +78,53 @@
     "postUrl": "https://linux.do/t/topic/3042622",
     "mobile": true,
     "madeWith": "Claude + Codex"
+  },
+  {
+    "id": 7,
+    "title": "靶子在那边！",
+    "desc": "拔箭吧！",
+    "tag": "脑洞大开",
+    "playUrl": "https://she.hlool.top/",
+    "author": "hlool",
+    "addedAt": "2026-10-28",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/hlool/96/1554784_2.png",
+    "postUrl": "https://linux.do/t/topic/3067047",
+    "mobile": true
+  },
+  {
+    "id": 8,
+    "title": "千秋",
+    "desc": "在线帝国时代类小游戏",
+    "tag": "硬核挑战",
+    "playUrl": "http://king.hlool.top:5190/",
+    "author": "hlool",
+    "addedAt": "2026-10-28",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/1/a/8/1a80d415c623b812d98906d7294d3cf822017c41_2_1024x715.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/hlool/96/1554784_2.png",
+    "postUrl": "https://linux.do/t/topic/3087697"
+  },
+  {
+    "id": 9,
+    "title": "烬落 GREYFALL",
+    "desc": "2D 横版像素格斗游戏，玩法灵感源自《Dead Cells》",
+    "tag": "脑洞大开",
+    "playUrl": "https://greyfall-ashen-descent-reborn.hloolyou.chatgpt.site/",
+    "author": "hlool",
+    "addedAt": "2026-10-28",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/hlool/96/1554784_2.png",
+    "postUrl": "https://linux.do/t/topic/2992805"
+  },
+  {
+    "id": 10,
+    "title": "游戏王",
+    "desc": "《游戏王》经典卡牌游戏",
+    "tag": "经典重制",
+    "playUrl": "https://yu-gi-oh-destiny-duel.pages.dev/",
+    "author": "Frank_Cheung",
+    "addedAt": "2026-10-28",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/8/2/6/8261ce3853343f435fc504503da9cf9e0ba14e5a_2_1024x578.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/frank_cheung/96/48038_2.png",
+    "postUrl": "https://linux.do/t/topic/2865354",
+    "madeWith": "GPT-6 Astra"
   }
 ]
