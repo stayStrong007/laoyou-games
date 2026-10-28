@@ -36,6 +36,16 @@ function httpsUrl(value) {
   }
 }
 
+function webUrl(value) {
+  if (typeof value !== "string") return null;
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" || url.protocol === "http:" ? url : null;
+  } catch {
+    return null;
+  }
+}
+
 const isLdstatic = (url) => url.hostname === "ldstatic.com" || url.hostname.endsWith(".ldstatic.com");
 
 function isRealDate(value) {
@@ -78,7 +88,9 @@ function checkGame(game, label) {
     if (!isRealDate(game.addedAt)) err(`addedAt "${game.addedAt}" 不是有效的 YYYY-MM-DD 日期`);
     else if (game.addedAt > TODAY) warn(`addedAt ${game.addedAt} 晚于今天`);
   }
-  for (const key of ["playUrl", "postUrl", "repoUrl"]) {
+  // 游玩地址允许 http（不少游戏直接用 IP 加端口部署），其他链接仍然只认 https
+  if (game.playUrl !== undefined && game.playUrl !== "" && !webUrl(game.playUrl)) err('"playUrl" 必须是 http 或 https 链接');
+  for (const key of ["postUrl", "repoUrl"]) {
     if (game[key] !== undefined && game[key] !== "" && !httpsUrl(game[key])) err(`"${key}" 必须是 https 链接`);
   }
   if (httpsUrl(game.postUrl) && !game.postUrl.startsWith("https://linux.do/t/")) err("postUrl 必须以 https://linux.do/t/ 开头");

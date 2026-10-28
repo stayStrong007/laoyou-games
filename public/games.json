@@ -1,1 +1,55 @@
-[]
+[
+  {
+    "id": 1,
+    "title": "雨后蟹洞",
+    "desc": "相手蟹与捉蟹人的三维小游戏",
+    "tag": "脑洞大开",
+    "playUrl": "https://muselabs.co/crab-burrow",
+    "author": "_westfall",
+    "addedAt": "2026-10-28",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/c/6/9/c69b23acf13aac330f5e4c59081c03a64418eec2_2_1024x579.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/_westfall/96/2936092_2.png",
+    "postUrl": "https://linux.do/t/topic/3075518",
+    "mobile": true
+  },
+  {
+    "id": 2,
+    "title": "情侣双人-二人世界",
+    "desc": "和Ta一起玩的小游戏",
+    "tag": "摸鱼必备",
+    "playUrl": "http://182.61.60.223:8790/",
+    "author": "PurpleBlue",
+    "addedAt": "2026-10-28",
+    "cover": "https://cdn3.ldstatic.com/original/4X/1/0/1/101a32e796df3c7d0514ebd4dc370a889d10a97f.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/purpleblue/96/2628035_2.png",
+    "postUrl": "https://linux.do/t/topic/3082776",
+    "mobile": true
+  },
+  {
+    "id": 3,
+    "title": "肉鸽打飞机",
+    "desc": "大家一起来打飞机",
+    "tag": "硬核挑战",
+    "playUrl": "https://game.archerhx.xyz/",
+    "author": "Archerhx",
+    "addedAt": "2026-10-28",
+    "cover": "https://cdn3.ldstatic.com/original/4X/1/4/b/14b72c18dd118602cd7afca3776b7c05bb8ca071.jpeg",
+    "postUrl": "https://linux.do/t/topic/3076102",
+    "mobile": true,
+    "madeWith": "GPT-6 Astra"
+  },
+  {
+    "id": 4,
+    "title": "冰球游戏",
+    "desc": "好玩丝滑的在线冰球游戏",
+    "tag": "摸鱼必备",
+    "playUrl": "http://bin.hlool.top:39080/",
+    "author": "hlool",
+    "addedAt": "2026-10-28",
+    "cover": "https://cdn3.ldstatic.com/original/4X/3/8/8/388aca169cb296dbad781f4c03dccb1d4d401fbe.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/hlool/96/1554784_2.png",
+    "postUrl": "https://linux.do/t/topic/3057890",
+    "mobile": true,
+    "madeWith": "opus-5-5"
+  }
+]

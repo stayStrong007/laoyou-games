@@ -10,8 +10,8 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:title" content="佬友的游戏屋 | Laoyou Games">
 <meta property="og:description" content="收录 Linux DO 佬友们搓出来的快乐：都是在浏览器里点开就能玩的小游戏。">
-<meta property="og:url" content="https://games.example.com/">
-<meta property="og:image" content="https://games.example.com/og-image.png">
+<meta property="og:url" content="https://games.lion.dpdns.org/">
+<meta property="og:image" content="https://games.lion.dpdns.org/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="佬友的游戏屋：收录 Linux DO 佬友们搓出来的快乐。">
@@ -368,7 +368,7 @@ button.badge:hover{background:var(--line);color:var(--ink)}
   };
   const ORDER = ["全部", ...Object.keys(CATS)];
   const TPL = {
-    "投稿": "【投稿】\n游戏名称：\n一句话简介：\n分类：摸鱼必备 / 经典重制 / 脑洞大开 / 硬核挑战（四选一）\n游玩地址：\n原帖地址：\n手机能玩：能 / 不能\n用什么搓的（选填）：\n开源地址（选填）：\n（选填：贴一张横屏截图作封面，不贴就用原帖的第一张图）",
+    "投稿": "【投稿】\n游戏名称：\n一句话简介：\n分类：摸鱼必备 / 经典重制 / 脑洞大开 / 硬核挑战（四选一）\n游玩地址：\n原帖地址：\n手机能玩：能 / 不能\n用什么搓的（选填）：\n开源地址（选填）：\n封面（选填）：贴一张横屏截图，不贴就用默认封面",
     "修改": "【修改】\n游戏：#编号 或 游戏名称\n修改内容：",
     "下架": "【下架】\n游戏：#编号 或 游戏名称",
     "反馈": "【反馈】\n游戏：#编号 或 游戏名称\n问题：打不开 / 内容异常 / 其他\n说明：",
@@ -440,6 +440,8 @@ button.badge:hover{background:var(--line);color:var(--ink)}
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   const isHttps = (u) => typeof u === "string" && /^https:\/\/[^\s"'<>]+$/i.test(u);
+  /* 游玩地址允许 http：不少佬友的游戏直接用 IP 加端口部署 */
+  const isWebUrl = (u) => typeof u === "string" && /^https?:\/\/[^\s"'<>]+$/i.test(u);
   const isCover = (u) => isHttps(u) || (typeof u === "string" && /^covers\/[\w.\-\/]+$/.test(u) && !u.includes(".."));
 
   const pad2 = (n) => String(n).padStart(2, "0");
@@ -471,7 +473,7 @@ button.badge:hover{background:var(--line);color:var(--ink)}
   function cleanGame(g) {
     if (!g || typeof g !== "object" || g.removed) return null;
     const ok = Number.isInteger(g.id) && g.id > 0 && typeof g.title === "string" && g.title && typeof g.desc === "string" &&
-      CATS[g.tag] && isHttps(g.playUrl) && typeof g.author === "string" && g.author && isHttps(g.postUrl) &&
+      CATS[g.tag] && isWebUrl(g.playUrl) && typeof g.author === "string" && g.author && isHttps(g.postUrl) &&
       /^\d{4}-\d{2}-\d{2}$/.test(g.addedAt);
     if (!ok) {
       console.warn("[games.json] 跳过不完整的条目", g);
@@ -725,15 +727,19 @@ button.badge:hover{background:var(--line);color:var(--ink)}
 
   let lastFocus = null;
   let curTab = "投稿";
-  function setTab(tab, text) {
+  let tplGame = null; /* 从卡片的小旗打开时，修改、下架、反馈模板里预先填好这款游戏 */
+  function setTab(tab) {
     curTab = tab;
     document.querySelectorAll('[data-act="tab"]').forEach((b) => b.setAttribute("aria-pressed", String(b.getAttribute("data-tab") === tab)));
-    els.tpl.textContent = text || TPL[tab];
+    const g = tab === "投稿" ? null : tplGame;
+    /* 用函数做替换值，游戏名里的 $& 之类不会被当成替换模式 */
+    els.tpl.textContent = g ? TPL[tab].replace("#编号 或 游戏名称", () => `#${g.id} ${g.title}`) : TPL[tab];
     els.note.innerHTML = `${pix("check")}<span>${NOTE[tab]}</span>`;
   }
-  function openModal(tab, text) {
+  function openModal(tab, game) {
     lastFocus = document.activeElement;
-    setTab(tab || "投稿", text);
+    tplGame = game || null;
+    setTab(tab || "投稿");
     els.overlay.hidden = false;
     els.dialog.focus();
   }
@@ -817,16 +823,6 @@ button.badge:hover{background:var(--line);color:var(--ink)}
     paintLike(btn, g);
   }
 
-  function report(g) {
-    const text = `【反馈】\n游戏：#${g.id} ${g.title}\n问题：打不开 / 内容异常 / 其他\n说明：`;
-    copyText(text, () => toast(`已复制「${g.title}」的反馈模板，粘贴到主贴回复就行`), () => {
-      openModal("反馈", text);
-      selectText(els.tpl);
-      toast("复制没成功，已选中模板，按 Ctrl+C 复制");
-    });
-    window.open(CONFIG.forumThread, "_blank", "noopener");
-  }
-
   function lucky() {
     if (loadState !== "ready" || !GAMES.length) {
       toast("还没有游戏可以抽");
@@ -885,7 +881,7 @@ button.badge:hover{background:var(--line);color:var(--ink)}
     switch (t.getAttribute("data-act")) {
       case "play": if (g) markPlayed(g); break;
       case "like": if (g) toggleLike(g, t); break;
-      case "report": if (g) report(g); break;
+      case "report": if (g) openModal("反馈", g); break;
       case "model": filterModel(t.getAttribute("data-model")); break;
       case "cat": S.cat = t.getAttribute("data-cat"); render(); break;
       case "mobile":
