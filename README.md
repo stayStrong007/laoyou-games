@@ -49,8 +49,10 @@ npx wrangler pages dev
 1. **创建 D1 数据库**：左侧菜单"存储和数据库 → D1 SQL 数据库"，点"创建数据库"，名称填 `laoyou-games`。创建后，在数据库详情页复制"数据库 ID"。
 2. **建表**：在这个数据库的"控制台"（Console）标签页里，把 `schema.sql` 的全部内容粘贴进去，点"执行"（Execute）。里面有两条建表语句，一次执行就行。执行后在"表"里能看到 `likes` 和 `like_counts` 两张表。
 3. **改配置并推送**：
-   - 把第 1 步复制的 ID 填进 `wrangler.toml` 的 `database_id`，替换那串 0。
-   - 把 `public/index.html` 里的占位值换掉：`CONFIG.repoUrl`（GitHub 仓库地址），以及 `<head>` 里 `og:url`、`og:image` 的域名。宣传主帖 `CONFIG.forumThread` 可以等发帖后再改。运行 `node scripts/validate.mjs` 会提醒还剩哪些没换。
+   - 把 `wrangler.toml` 里的 `database_id` 换成第 1 步复制的 ID。
+   - 把 `public/index.html` 里这几处换成你自己的：`CONFIG.repoUrl`（GitHub 仓库地址）、`CONFIG.forumThread`（宣传主帖地址，可以等发帖后再改），以及 `<head>` 里 `og:url`、`og:image` 的域名。
+
+   仓库里现在填的是本站自己的配置。如果你是 fork 这个仓库去部署自己的站点，上面这几处都要换成你自己的。
    - 提交并推送到 GitHub。
 4. **创建 Pages 项目**：左侧菜单"Workers 和 Pages"，点"创建"，选 Pages 里的"连接到 Git"，选中这个仓库，然后：
    - 项目名称：`laoyou-games`，和 `wrangler.toml` 里的 `name` 保持一致

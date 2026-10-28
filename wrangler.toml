@@ -9,7 +9,7 @@ compatibility_date = "2026-09-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "laoyou-games"
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "e81161be-be44-4e1a-a077-5d2cfce81c3a"
 
 # IP 加盐用的 IP_SALT 是机密，不要写在这里：
 # 在 Pages 项目的 设置 → 变量和机密 里添加（类型选"机密"），值用一串随机字符。
