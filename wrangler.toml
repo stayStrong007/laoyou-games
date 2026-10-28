@@ -1,0 +1,15 @@
+# Cloudflare Pages 项目配置
+# 文档：https://developers.cloudflare.com/pages/functions/wrangler-configuration/
+name = "laoyou-games"
+pages_build_output_dir = "public"
+compatibility_date = "2026-09-01"
+
+# 点赞数据库。先在 Cloudflare 控制台（或 npx wrangler d1 create laoyou-games）创建数据库，
+# 再把下面的 database_id 换成真实 ID。
+[[d1_databases]]
+binding = "DB"
+database_name = "laoyou-games"
+database_id = "00000000-0000-0000-0000-000000000000"
+
+# IP 加盐用的 IP_SALT 是机密，不要写在这里：
+# 在 Pages 项目的 设置 → 变量和机密 里添加（类型选"机密"），值用一串随机字符。

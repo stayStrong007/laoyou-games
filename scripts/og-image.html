@@ -1,0 +1,74 @@
+<!doctype html>
+<!--
+  链接预览图（og-image.png，1200×630）的设计源文件。改了标语之后重新生成：
+  1. python scripts/subset-fonts.py …（让字体包含新字）
+  2. 用 Edge / Chrome 的无头模式截图，命令见 README 的"改了固定文案之后"一节
+-->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>佬友的游戏屋 · 链接预览图</title>
+<style>
+@font-face{font-family:"LG Pixel";src:url("../public/fonts/lg-pixel.woff2") format("woff2")}
+@font-face{font-family:"LG Arcade";src:url("../public/fonts/lg-arcade.woff2") format("woff2")}
+*{box-sizing:border-box}
+html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+body{position:relative;background:#E4E3EA;color:#17161E;font-family:"LG Pixel","Microsoft YaHei",sans-serif;-webkit-font-smoothing:none}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(23,22,30,.06) 2px,transparent 2px),linear-gradient(90deg,rgba(23,22,30,.06) 2px,transparent 2px);background-size:24px 24px}
+.panel{position:absolute;inset:56px 56px 68px;display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:center;padding:0 60px;background:#F6F6F9;border:6px solid #17161E;border-radius:32px 32px 20px 20px;box-shadow:0 12px 0 #17161E}
+.panel::before{content:"";position:absolute;top:-6px;left:50%;width:132px;height:18px;transform:translateX(-50%);background:#E4E3EA;border:6px solid #17161E;border-top:0;border-radius:0 0 14px 14px}
+.bezel{padding:22px 22px 30px;background:#3A3947;border:6px solid #17161E;border-radius:22px 22px 64px 22px}
+.lcd{position:relative;display:grid;place-items:center;height:250px;background:#9BBC0F;border-radius:8px;color:#0F380F}
+.lcd::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(15,56,15,.08) 2px,transparent 2px),linear-gradient(90deg,rgba(15,56,15,.08) 2px,transparent 2px);background-size:6px 6px;border-radius:8px}
+.lcd svg{width:196px;height:auto}
+.power{display:flex;align-items:center;gap:10px;margin-bottom:16px;color:#B9B7C9;font:14px/1 "LG Arcade",monospace;letter-spacing:2px}
+.power i{width:14px;height:14px;border-radius:50%;background:#E8395A}
+.sub{font:22px/1.4 "LG Arcade",monospace;letter-spacing:3px;color:#64627A}
+h1{margin:14px 0 6px;font-size:96px;font-weight:400;line-height:1.25}
+p{margin:0;font-size:48px;line-height:1.5}
+mark{background:none;color:inherit;box-shadow:inset 0 -18px 0 #FFC93C;white-space:nowrap}
+.icons{display:flex;gap:16px;margin-top:22px}
+.icons span{display:grid;place-items:center;width:64px;height:64px;border:5px solid #17161E;border-radius:12px;color:#fff;font-size:34px}
+.icons svg{height:1em;width:auto}
+</style>
+</head>
+<body>
+<div class="grid"></div>
+<div class="panel">
+  <div class="bezel">
+    <div class="power"><i></i>POWER</div>
+    <div class="lcd" id="logo"></div>
+  </div>
+  <div>
+    <div class="sub">LAOYOU GAMES</div>
+    <h1 data-pixel>佬友的游戏屋</h1>
+    <p data-pixel>收录 Linux DO 佬友们<br><mark>搓出来的快乐</mark></p>
+    <div class="icons" id="icons"></div>
+  </div>
+</div>
+<script>
+  const PIX = {
+    house: [
+      "......rr......", ".....rrrr.....", "....rrrrrr....", "...rrrrrrrr...", "..rrrrrrrrrr..", ".rrrrrrrrrrrr.", "rrrrrrrrrrrrrr",
+      ".############.", ".#ssskskssss#.", ".#sskkkkksss#.", ".#sskkkkksss#.", ".#ssskkkssss#.", ".#ssssksssss#.", ".############.",
+    ],
+    fish: ["....####..", "#..######.", "##.###.###", "##########", "##.#######", "#..######.", "....####.."],
+    invader: ["..#.....#..", "...#...#...", "..#######..", ".##.###.##.", "###########", "#.#######.#", "#.#.....#.#", "...##.##..."],
+    bulb: ["..###..", ".#####.", "##.####", "#.#####", "#######", ".#####.", "..###..", "..#.#..", "..###.."],
+    skull: [".######.", "########", "#..##..#", "#..##..#", "###..###", ".######.", ".#.##.#."],
+  };
+  const COLORS = { "#": "currentColor", r: "#D02A40", s: "#C9E04A", k: "#0F380F" };
+  function pix(name) {
+    const map = PIX[name];
+    let out = "";
+    map.forEach((row, y) => [...row].forEach((c, x) => {
+      if (c !== ".") out += `<rect x="${x}" y="${y}" width="1.05" height="1.05" fill="${COLORS[c] || "currentColor"}"/>`;
+    }));
+    return `<svg viewBox="0 0 ${map[0].length} ${map.length}" shape-rendering="crispEdges">${out}</svg>`;
+  }
+  document.getElementById("logo").innerHTML = pix("house");
+  document.getElementById("icons").innerHTML = [["fish", "#169C95"], ["invader", "#E2602A"], ["bulb", "#8650DC"], ["skull", "#D02A40"]]
+    .map(([name, bg]) => `<span style="background:${bg}">${pix(name)}</span>`).join("");
+</script>
+</body>
+</html>

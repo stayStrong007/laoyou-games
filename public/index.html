@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>佬友的游戏屋 | Laoyou Games</title>
+<meta name="description" content="收录 Linux DO 佬友们搓出来的快乐：都是在浏览器里点开就能玩的小游戏。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="佬友的游戏屋">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="佬友的游戏屋 | Laoyou Games">
+<meta property="og:description" content="收录 Linux DO 佬友们搓出来的快乐：都是在浏览器里点开就能玩的小游戏。">
+<meta property="og:url" content="https://games.example.com/">
+<meta property="og:image" content="https://games.example.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="佬友的游戏屋：收录 Linux DO 佬友们搓出来的快乐。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#E4E3EA">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/lg-pixel.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/lg-arcade.woff2" as="font" type="font/woff2" crossorigin>
+<script>try{var t=JSON.parse(localStorage.getItem("lg.theme"));if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+@font-face{font-family:"LG Pixel";src:url("fonts/lg-pixel.woff2") format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"LG Arcade";src:url("fonts/lg-arcade.woff2") format("woff2");font-weight:100 900;font-display:swap}
+/* 布局：主机外壳顶栏 → 标语 + 掌机 LCD 运势屏 → 筛选栏 → 卡带墙（游戏卡片）→ 页脚 */
+:root{
+  color-scheme:light;
+  --bg:#E4E3EA;--shell:#F6F6F9;--shell-2:#ECEBF1;--ink:#17161E;--ink-2:#4D4B5C;--ink-3:#64627A;
+  --line:#CDCBD8;--edge:#17161E;--focus:#2F45E0;
+  --accent:#FFC93C;--on-accent:#1C1500;--hot:#E8395A;
+  --lcd:#9BBC0F;--lcd-ink:#0F380F;--lcd-mid:#306230;--lcd-tint:rgba(15,56,15,.12);--lcd-grid:rgba(15,56,15,.07);
+  --bezel:#3A3947;--bezel-ink:#B9B7C9;
+  --c-fish:#169C95;--c-classic:#E2602A;--c-brain:#8650DC;--c-hard:#D02A40;--av5:#2F6FD8;--av6:#C23C8C;--avatar-ink:#FFFFFF;
+  --cover-ink:rgba(255,255,255,.92);--cover-grid:rgba(0,0,0,.08);--cover-dot:rgba(255,255,255,.24);
+  --chip-bg:rgba(16,15,22,.68);--chip-ink:#FFFFFF;--new-bg:#FFC93C;--new-ink:#1C1500;
+  --scrim:rgba(14,13,20,.55);--toast-bg:#17161E;--toast-ink:#F6F6F9;
+  --f-display:"LG Pixel",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+  --f-pixel:"LG Arcade",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  --f-body:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --bg:#0F0F16;--shell:#1B1A25;--shell-2:#252433;--ink:#EEEDF6;--ink-2:#B3B1C6;--ink-3:#85839A;
+  --line:#2D2C3D;--edge:#050508;--focus:#FFD23F;
+  --accent:#FFD23F;--on-accent:#1C1500;--hot:#FF5A78;
+  --lcd:#8BAC0F;--lcd-ink:#0F380F;--lcd-mid:#306230;--lcd-tint:rgba(15,56,15,.14);--lcd-grid:rgba(15,56,15,.08);
+  --bezel:#2A2936;--bezel-ink:#8D8BA3;
+  --c-fish:#12827C;--c-classic:#C45424;--c-brain:#7046C0;--c-hard:#B32438;--av5:#3A72CF;--av6:#B03A80;--avatar-ink:#FFFFFF;
+  --cover-ink:rgba(255,255,255,.88);--cover-grid:rgba(0,0,0,.2);--cover-dot:rgba(255,255,255,.16);
+  --chip-bg:rgba(6,6,10,.72);--chip-ink:#FFFFFF;--new-bg:#FFD23F;--new-ink:#1C1500;
+  --scrim:rgba(0,0,0,.62);--toast-bg:#EEEDF6;--toast-ink:#17161E;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0F0F16;--shell:#1B1A25;--shell-2:#252433;--ink:#EEEDF6;--ink-2:#B3B1C6;--ink-3:#85839A;
+  --line:#2D2C3D;--edge:#050508;--focus:#FFD23F;
+  --accent:#FFD23F;--on-accent:#1C1500;--hot:#FF5A78;
+  --lcd:#8BAC0F;--lcd-ink:#0F380F;--lcd-mid:#306230;--lcd-tint:rgba(15,56,15,.14);--lcd-grid:rgba(15,56,15,.08);
+  --bezel:#2A2936;--bezel-ink:#8D8BA3;
+  --c-fish:#12827C;--c-classic:#C45424;--c-brain:#7046C0;--c-hard:#B32438;--av5:#3A72CF;--av6:#B03A80;--avatar-ink:#FFFFFF;
+  --cover-ink:rgba(255,255,255,.88);--cover-grid:rgba(0,0,0,.2);--cover-dot:rgba(255,255,255,.16);
+  --chip-bg:rgba(6,6,10,.72);--chip-ink:#FFFFFF;--new-bg:#FFD23F;--new-ink:#1C1500;
+  --scrim:rgba(0,0,0,.62);--toast-bg:#EEEDF6;--toast-ink:#17161E;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+img{max-width:100%}
+[hidden]{display:none!important}
+.wrap{max-width:1180px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:768px){.wrap{padding-left:max(28px,env(safe-area-inset-left,0px));padding-right:max(28px,env(safe-area-inset-right,0px))}}
+.px{display:inline-block;height:1em;flex:none;vertical-align:-.14em;overflow:visible}
+
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:max(16px,env(safe-area-inset-top,0px)) 16px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0;color:var(--ink);text-decoration:none}
+.logo{display:flex;font-size:40px}
+.brand-name{display:block;font:800 24px/1.25 var(--f-display);white-space:nowrap}
+.brand-name,.slogan,.dialog h2{font-synthesis:none;-webkit-font-smoothing:none}
+.brand-sub{display:block;margin-top:6px;font:8px/1 var(--f-pixel);letter-spacing:1px;color:var(--ink-3)}
+.top-actions{display:flex;align-items:center;gap:8px;flex:none}
+.top .search{flex:0 1 320px;margin-left:auto;height:40px}
+.top-actions .search-toggle{display:none}
+@media (max-width:640px){
+  .top .wrap{flex-wrap:wrap}
+  .top .search{display:none;order:3;flex:1 0 100%}
+  .top.searching .search{display:flex}
+  .top-actions .search-toggle{display:inline-flex}
+  .top-actions{margin-left:auto}
+}
+@media (max-width:440px){.logo{font-size:32px}.brand-sub{display:none}.top-actions{gap:6px}}
+
+.btn{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 14px;border:2px solid var(--edge);border-radius:8px;background:var(--shell);color:var(--ink);font:700 14px/1 var(--f-body);cursor:pointer;box-shadow:0 3px 0 var(--edge);transition:transform .08s ease,box-shadow .08s ease;white-space:nowrap;text-decoration:none}
+.btn:hover{background:var(--shell-2)}
+.btn:active{transform:translateY(3px);box-shadow:0 0 0 var(--edge)}
+.btn.primary{background:var(--accent);color:var(--on-accent)}
+.btn.primary:hover{background:var(--accent);filter:brightness(1.05)}
+.btn.sq{width:40px;padding:0}
+.btn .px{font-size:15px}
+.btn:focus-visible,.chip:focus-visible,.cover:focus-visible,.like:focus-visible,.badge:focus-visible,.seg button:focus-visible,.who:focus-visible,.brand:focus-visible,.lcd-btn:focus-visible,.foot a:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:32px;align-items:center;padding-block:8px 32px}
+@media (max-width:880px){.hero .wrap{grid-template-columns:minmax(0,1fr);gap:24px}}
+.kicker{font:10px/1.6 var(--f-pixel);letter-spacing:1px;color:var(--ink-3)}
+.slogan{margin:10px 0 14px;font:800 36px/1.5 var(--f-display);text-wrap:balance}
+@media (min-width:1024px){.slogan{font-size:48px}}
+.slogan mark{background:none;color:inherit;box-shadow:inset 0 -.3em 0 var(--accent)}
+.slogan .nowrap,.slogan mark{white-space:nowrap}
+.lede{max-width:32em;margin:0 0 22px;color:var(--ink-2);text-wrap:balance}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+
+.bezel{background:var(--bezel);border:2px solid var(--edge);border-radius:14px 14px 44px 14px;box-shadow:0 4px 0 var(--edge);padding:12px 18px 22px}
+.bezel-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;font:8px/1 var(--f-pixel);letter-spacing:1px;color:var(--bezel-ink)}
+.power{display:inline-flex;align-items:center;gap:6px}
+.power i{width:8px;height:8px;border-radius:50%;background:var(--hot)}
+.lcd{position:relative;overflow:hidden;background:var(--lcd);color:var(--lcd-ink);border-radius:4px;padding:14px 16px;font-size:14px}
+.lcd::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--lcd-grid) 1px,transparent 1px),linear-gradient(90deg,var(--lcd-grid) 1px,transparent 1px);background-size:3px 3px}
+.lcd-row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.lcd-row b{font-size:15px}
+.lcd-row span{font:9px/1 var(--f-pixel)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0;padding:10px 0;border-block:2px dashed var(--lcd-mid)}
+.stat b{display:block;font:clamp(12px,3.4vw,17px)/1.5 var(--f-pixel);font-variant-numeric:tabular-nums;white-space:nowrap}
+.stat span{font-size:12px}
+.yiji{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 10px;align-items:center;margin-bottom:12px}
+.yj{display:grid;place-items:center;width:26px;height:26px;border-radius:3px;background:var(--lcd-ink);color:var(--lcd);font-weight:800}
+.pick{display:flex;align-items:center;gap:12px;min-height:60px;padding:10px;border-radius:4px;background:var(--lcd-tint)}
+.pick-thumb{display:grid;place-items:center;flex:none;width:64px;max-width:100%;aspect-ratio:16/9;border-radius:3px;background:var(--lcd-ink);color:var(--lcd);font-size:20px}
+.pick-txt{display:flex;flex-direction:column;flex:1;min-width:0}
+.pick-txt span{font-size:12px}
+.pick-txt b{font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lcd-btn{appearance:none;display:inline-flex;align-items:center;gap:6px;flex:none;height:36px;padding:0 12px;border:0;border-radius:4px;background:var(--lcd-ink);color:var(--lcd);font:700 14px var(--f-body);cursor:pointer;text-decoration:none}
+.lcd-btn:focus-visible{outline-color:var(--lcd-ink)}
+.lcd-btn .px{font-size:12px}
+
+.rack{background:var(--bg);border-block:2px solid var(--line)}
+.rack .wrap{display:flex;align-items:center;gap:10px 16px;padding-block:10px}
+@media (min-width:720px){.rack{position:sticky;top:env(safe-area-inset-top,0px);z-index:20}}
+.chips-wrap{position:relative;display:flex;align-items:center;flex:1;min-width:0}
+.chips{display:flex;gap:8px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;scroll-behavior:smooth;padding:2px 2px 6px}
+.chips::-webkit-scrollbar{display:none}
+/* 分类放不下时横向滑动：哪一侧还有内容，哪一侧就出现渐隐和箭头 */
+.chips-wrap::before,.chips-wrap::after{content:"";position:absolute;top:0;bottom:4px;width:40px;pointer-events:none;opacity:0;transition:opacity .15s ease;z-index:1}
+.chips-wrap::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.chips-wrap::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
+.chips-wrap.can-left::before,.chips-wrap.can-right::after{opacity:1}
+.scroll-btn{position:absolute;top:50%;z-index:2;display:none;place-items:center;width:30px;height:30px;margin-top:-4px;padding:0;border:2px solid var(--edge);border-radius:50%;background:var(--shell);color:var(--ink);font:700 16px/1 var(--f-body);cursor:pointer;transform:translateY(-50%);box-shadow:0 2px 0 var(--edge)}
+.scroll-btn.prev{left:0}
+.scroll-btn.next{right:0}
+.chips-wrap.can-left .scroll-btn.prev,.chips-wrap.can-right .scroll-btn.next{display:grid}
+.scroll-btn:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.tools{display:flex;align-items:center;gap:10px;flex:none}
+@media (max-width:560px){
+  .rack .wrap{flex-wrap:wrap}
+  .chips-wrap{flex-basis:100%}
+  .tools{flex-basis:100%;justify-content:space-between}
+}
+.chip{appearance:none;display:inline-flex;align-items:center;gap:6px;flex:none;height:38px;padding:0 12px;border:2px solid var(--edge);border-radius:999px;background:var(--shell);color:var(--ink);font:700 14px/1 var(--f-body);cursor:pointer;box-shadow:0 2px 0 var(--edge)}
+.chip .px{font-size:14px;color:var(--cat,currentColor)}
+.chip .n{font:9px/1 var(--f-pixel);color:var(--ink-3)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--shell)}
+.chip[aria-pressed="true"] .n{color:var(--shell-2)}
+.chip.mobile-chip[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+.search{display:flex;align-items:center;gap:8px;min-width:0;height:38px;padding:0 12px;border:2px solid var(--edge);border-radius:8px;background:var(--shell);color:var(--ink-3);box-shadow:0 2px 0 var(--edge)}
+.search:focus-within{outline:3px solid var(--focus);outline-offset:2px}
+.search input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink);font:15px var(--f-body)}
+.seg{display:inline-flex;flex:none;border:2px solid var(--edge);border-radius:8px;overflow:hidden;box-shadow:0 2px 0 var(--edge)}
+.seg button{appearance:none;height:34px;padding:0 12px;border:0;background:var(--shell);color:var(--ink);font:700 13px var(--f-body);cursor:pointer}
+.seg button+button{border-left:2px solid var(--edge)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--shell)}
+
+.wall .wrap{padding-block:22px 48px}
+.result{margin-bottom:16px;font-size:13px;color:var(--ink-3)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,292px),1fr));gap:26px 20px}
+.card{position:relative;display:flex;flex-direction:column;padding:10px;background:var(--shell);border:2px solid var(--edge);border-radius:14px 14px 10px 10px;box-shadow:0 5px 0 var(--edge);transition:transform .12s ease,box-shadow .12s ease}
+.card::before{content:"";position:absolute;top:-2px;left:50%;width:56px;height:7px;transform:translateX(-50%);background:var(--bg);border:2px solid var(--edge);border-top:0;border-radius:0 0 6px 6px}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 0 var(--edge)}
+.card.picked{outline:4px solid var(--focus);outline-offset:4px;animation:flash .28s steps(1) 6}
+@keyframes flash{50%{outline-color:transparent}}
+.cover{position:relative;display:block;max-width:100%;aspect-ratio:16/9;overflow:hidden;border:2px solid var(--edge);border-radius:8px;background:var(--cat);cursor:pointer;container-type:inline-size}
+.cover::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--cover-grid) 1px,transparent 1px),linear-gradient(90deg,var(--cover-grid) 1px,transparent 1px);background-size:12px 12px}
+.dot{position:absolute;background:var(--cover-dot)}
+.art{position:absolute;right:8%;top:50%;display:flex;transform:translateY(-50%);font-size:64px;font-size:min(22cqw,96px);color:var(--cover-ink)}
+.cover-img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
+.tagchip,.played{position:absolute;z-index:1;display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border-radius:999px;background:var(--chip-bg);color:var(--chip-ink);font-size:12px;font-weight:700}
+.tagchip{left:8px;top:8px}
+.tagchip .px,.played .px{font-size:12px}
+.played{right:8px;bottom:8px}
+.newtag{position:absolute;z-index:1;left:8px;bottom:8px;padding:5px 6px;border:2px solid var(--edge);border-radius:3px;background:var(--new-bg);color:var(--new-ink);font:8px/1 var(--f-pixel)}
+.press{position:absolute;z-index:2;inset:0;display:grid;place-items:center;background:var(--scrim);color:var(--chip-ink);font:11px/1 var(--f-pixel);letter-spacing:1px;opacity:0;transition:opacity .15s ease}
+.cover:hover .press,.cover:focus-visible .press{opacity:1}
+.press span{animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.like{position:absolute;right:20px;top:20px;z-index:3;display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 10px;border:0;border-radius:999px;background:var(--chip-bg);color:var(--chip-ink);font:10px/1 var(--f-pixel);cursor:pointer}
+.like .px{font-size:14px}
+.like.on .px{color:var(--hot)}
+.like.pop .px{animation:pop .35s ease}
+@keyframes pop{40%{transform:scale(1.5)}}
+.plus{position:absolute;right:24px;top:52px;z-index:4;font:10px/1 var(--f-pixel);color:var(--hot);pointer-events:none;animation:rise .7s ease forwards}
+@keyframes rise{to{transform:translateY(-26px);opacity:0}}
+.cbody{display:flex;flex-direction:column;gap:8px;flex:1;padding:12px 4px 0}
+.ctitle{margin:0;font-size:17px;font-weight:800;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cdesc{margin:0;min-height:3.2em;color:var(--ink-2);font-size:14px;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.badges{display:flex;flex-wrap:wrap;gap:6px;min-height:24px}
+.badge{appearance:none;display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 8px;border:0;border-radius:6px;background:var(--shell-2);color:var(--ink-2);font:700 12px/1 var(--f-body)}
+.badge .px{font-size:12px}
+button.badge{cursor:pointer}
+button.badge:hover{background:var(--line);color:var(--ink)}
+.meta{display:flex;align-items:center;gap:8px;min-width:0;margin-top:auto;padding-top:4px;font-size:13px;color:var(--ink-3)}
+.avatar{position:relative;display:grid;place-items:center;flex:none;width:24px;height:24px;overflow:hidden;border:2px solid var(--edge);border-radius:50%;color:var(--avatar-ink);font-size:11px;font-weight:800}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.who{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink-2);font-weight:700;text-decoration:none}
+.who:hover{text-decoration:underline}
+.when{flex:none}
+.gid{margin-left:auto;flex:none;font:9px/1 var(--f-pixel);color:var(--ink-3)}
+.cfoot{display:flex;gap:8px;padding:12px 0 2px}
+.cfoot .btn{height:38px;padding:0 10px}
+.cfoot .btn.sq{width:38px;padding:0}
+.cfoot .play{flex:1}
+.code{font:10px/1 var(--f-pixel)}
+.slot,.notice{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;color:var(--ink-2)}
+.slot{min-height:300px;padding:28px 20px;border:2px dashed var(--ink-3);border-radius:14px}
+.slot>.px,.notice>.px{font-size:36px;color:var(--ink-3)}
+.slot b,.notice b{color:var(--ink);font-size:16px}
+.notice{grid-column:1/-1;padding:40px 16px}
+
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;padding-block:24px max(40px,env(safe-area-inset-bottom,0px));border-top:2px solid var(--line);font-size:13px;color:var(--ink-3)}
+.foot a{color:var(--ink-2);text-underline-offset:2px}
+
+.overlay{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;background:var(--scrim);padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.dialog{width:min(600px,100%);max-height:100%;overflow:auto;padding:22px;background:var(--shell);border:2px solid var(--edge);border-radius:16px;box-shadow:0 6px 0 var(--edge)}
+.dialog:focus{outline:none}
+.dlg-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.dialog h2{margin:0 0 6px;font:800 24px/1.5 var(--f-display)}
+.dialog p{margin:0;color:var(--ink-2)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}
+@media (max-width:520px){.steps{grid-template-columns:minmax(0,1fr)}}
+.step{padding:12px;border-radius:10px;background:var(--shell-2);font-size:13px;color:var(--ink-2)}
+.step i{display:block;margin-bottom:8px;font:9px/1 var(--f-pixel);font-style:normal;color:var(--ink-3)}
+.step b{display:block;margin-bottom:2px;font-size:14px;color:var(--ink)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.tpl{margin:0;padding:14px 16px;border:2px solid var(--edge);border-radius:10px;background:var(--lcd);color:var(--lcd-ink);font:13px/1.75 ui-monospace,"Cascadia Mono",Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
+.note{display:flex;gap:8px;align-items:flex-start;margin:12px 0 18px;padding:10px 12px;border-radius:10px;background:var(--shell-2);font-size:13px;color:var(--ink-2)}
+.note .px{margin-top:3px;font-size:13px;color:var(--ink)}
+.dialog-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px}
+
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:120;max-width:min(520px,calc(100% - 32px));padding:10px 16px;border-radius:999px;background:var(--toast-bg);color:var(--toast-ink);font-size:14px;font-weight:700;text-align:center;opacity:0;pointer-events:none;transform:translate(-50%,16px);transition:opacity .2s ease,transform .2s ease}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="./" aria-label="佬友的游戏屋">
+    <span class="logo" id="logo" aria-hidden="true"></span>
+    <span><span class="brand-name" data-pixel>佬友的游戏屋</span><span class="brand-sub">LAOYOU GAMES</span></span>
+  </a>
+  <label class="search" for="q"><span id="searchIco" aria-hidden="true"></span><input id="q" type="search" placeholder="搜游戏、作者或模型，比如 Fable" autocomplete="off"></label>
+  <div class="top-actions">
+    <button class="btn sq search-toggle" type="button" id="searchToggle" data-act="search" aria-label="搜索" aria-expanded="false"></button>
+    <button class="btn sq" type="button" id="themeBtn" data-act="theme" aria-label="切换主题"></button>
+    <button class="btn" type="button" data-act="submit">投稿</button>
+  </div>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div>
+    <div class="kicker">PLAYER 1 READY</div>
+    <h1 class="slogan" data-pixel>收录 <span class="nowrap">Linux DO</span> <span class="nowrap">佬友们</span><br><mark>搓出来的快乐</mark></h1>
+    <p class="lede">点开就能玩的小游戏，玩开心了去原帖跟作者聊聊。</p>
+    <div class="hero-cta">
+      <button class="btn primary" type="button" id="luckyBtn" data-act="lucky">手气不错</button>
+      <button class="btn" type="button" data-act="submit">我也搓了一个</button>
+    </div>
+  </div>
+  <div class="bezel" role="group" aria-label="今日运势">
+    <div class="bezel-top"><span class="power"><i></i>POWER</span><span>LAOYOU DOT MATRIX</span></div>
+    <div class="lcd">
+      <div class="lcd-row"><b id="lcdDate">今日</b><span>FORTUNE</span></div>
+      <div class="stats">
+        <div class="stat"><b id="stTotal">000</b><span>款游戏</span></div>
+        <div class="stat"><b id="stAuthors">000</b><span>位作者</span></div>
+        <div class="stat"><b id="stLast">--/--</b><span>上次收录</span></div>
+      </div>
+      <div class="yiji">
+        <span class="yj">宜</span><span id="yi">摸鱼 · 试新游戏 · 给作者点赞</span>
+        <span class="yj">忌</span><span id="ji">开会 · 外放声音 · 写周报</span>
+      </div>
+      <div class="pick" id="pick"><span class="pick-txt"><span>今日推荐</span><b>正在读取卡带…</b></span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="rack" aria-label="筛选与排序"><div class="wrap">
+  <div class="chips-wrap" id="chipsWrap">
+    <button class="scroll-btn prev" type="button" data-act="scroll" data-dir="-1" aria-label="向左看更多分类">‹</button>
+    <div class="chips" id="chips" role="group" aria-label="分类"></div>
+    <button class="scroll-btn next" type="button" data-act="scroll" data-dir="1" aria-label="向右看更多分类">›</button>
+  </div>
+  <div class="tools">
+    <button class="chip mobile-chip" type="button" id="mobileBtn" data-act="mobile" aria-pressed="false" title="只看手机能玩的游戏">手机能玩</button>
+    <div class="seg" role="group" aria-label="排序">
+      <button type="button" data-act="sort" data-sort="new" aria-pressed="true">最新</button>
+      <button type="button" data-act="sort" data-sort="hot" aria-pressed="false">最多喜爱</button>
+    </div>
+  </div>
+</div></section>
+
+<main class="wall" id="wall"><div class="wrap">
+  <div class="result" id="result" aria-live="polite">正在读取卡带…</div>
+  <noscript><p>佬友的游戏屋需要开启 JavaScript 才能显示游戏列表。</p></noscript>
+  <div class="grid" id="grid"></div>
+</div></main>
+
+<footer class="foot"><div class="wrap">
+  <span>佬友的游戏屋 · 非 <a href="https://linux.do/" target="_blank" rel="noopener">Linux DO</a> 官方项目 · <a id="repoLink" href="#" target="_blank" rel="noopener">GitHub</a></span>
+  <span>像素字体：<a href="fonts/LICENSES/fusion-pixel/OFL.txt">缝合像素字体</a>、<a href="fonts/LICENSES/press-start-2p/OFL.txt">Press Start 2P</a>（OFL 授权）</span>
+</div></footer>
+
+<div class="overlay" id="overlay" hidden>
+  <div class="dialog" id="dialog" role="dialog" aria-modal="true" aria-labelledby="dlgTitle" tabindex="-1">
+    <div class="dlg-head">
+      <h2 id="dlgTitle" data-pixel>在主贴回个帖就行</h2>
+      <button class="btn sq" type="button" id="closeBtn" data-act="close" aria-label="关闭"></button>
+    </div>
+    <p>投稿、修改、下架、反馈都在宣传主帖里处理，有 Linux DO 账号就够了。只收浏览器里点开就能玩、免费、不强制注册的游戏，并且要有你自己的原帖。</p>
+    <div class="steps">
+      <div class="step"><i>STEP 1</i><b>复制模板</b>选下面对应的类型</div>
+      <div class="step"><i>STEP 2</i><b>去主贴回复</b>填好内容贴进回帖</div>
+      <div class="step"><i>STEP 3</i><b>等站长处理</b>处理完会引用回复你</div>
+    </div>
+    <div class="tabs" role="group" aria-label="模板类型">
+      <button class="chip" type="button" data-act="tab" data-tab="投稿" aria-pressed="true">投稿</button>
+      <button class="chip" type="button" data-act="tab" data-tab="修改" aria-pressed="false">修改</button>
+      <button class="chip" type="button" data-act="tab" data-tab="下架" aria-pressed="false">下架</button>
+      <button class="chip" type="button" data-act="tab" data-tab="反馈" aria-pressed="false">反馈</button>
+    </div>
+    <pre class="tpl" id="tpl"></pre>
+    <div class="note" id="note"></div>
+    <div class="dialog-actions">
+      <button class="btn" type="button" data-act="copy">复制模板</button>
+      <a class="btn primary" id="threadLink" href="#" target="_blank" rel="noopener">打开主贴</a>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  "use strict";
+
+  /* 站点配置：上线前把主贴和仓库地址换成真实的；<head> 里 og:url / og:image 的域名也要换 */
+  const CONFIG = {
+    forumThread: "https://linux.do/t/topic/0",
+    repoUrl: "https://github.com/your-name/laoyou-games",
+    gamesUrl: "games.json",
+    likesApi: "/api/likes",
+  };
+
+  const CATS = {
+    "摸鱼必备": { icon: "fish", color: "var(--c-fish)" },
+    "经典重制": { icon: "invader", color: "var(--c-classic)" },
+    "脑洞大开": { icon: "bulb", color: "var(--c-brain)" },
+    "硬核挑战": { icon: "skull", color: "var(--c-hard)" },
+  };
+  const ORDER = ["全部", ...Object.keys(CATS)];
+  const TPL = {
+    "投稿": "【投稿】\n游戏名称：\n一句话简介：\n分类：摸鱼必备 / 经典重制 / 脑洞大开 / 硬核挑战（四选一）\n游玩地址：\n原帖地址：\n手机能玩：能 / 不能\n用什么搓的（选填）：\n开源地址（选填）：\n（选填：贴一张横屏截图作封面，不贴就用原帖的第一张图）",
+    "修改": "【修改】\n游戏：#编号 或 游戏名称\n修改内容：",
+    "下架": "【下架】\n游戏：#编号 或 游戏名称",
+    "反馈": "【反馈】\n游戏：#编号 或 游戏名称\n问题：打不开 / 内容异常 / 其他\n说明：",
+  };
+  const NOTE = {
+    "投稿": "站长会核对回帖人和原帖作者是不是同一个人，只收录作者本人的投稿。",
+    "修改": "只处理这款游戏作者本人的回帖。",
+    "下架": "只处理这款游戏作者本人的回帖，处理后游戏会从站里移除。",
+    "反馈": "任何人都可以反馈，站长确认后处理。",
+  };
+  const YI = ["摸鱼", "试新游戏", "给作者点赞", "去原帖催更", "刷新最高分", "带薪通关"];
+  const JI = ["开会", "外放声音", "写周报", "被老板看见", "熬夜冲榜", "立 flag"];
+
+  /* 像素图标：字符画，# 用当前文字颜色，其他字母见 PIX_COLORS */
+  const PIX = {
+    heart: [".##.##.", "#######", "#######", ".#####.", "..###..", "...#..."],
+    play: ["#....", "##...", "###..", "####.", "###..", "##...", "#...."],
+    fish: ["....####..", "#..######.", "##.###.###", "##########", "##.#######", "#..######.", "....####.."],
+    invader: ["..#.....#..", "...#...#...", "..#######..", ".##.###.##.", "###########", "#.#######.#", "#.#.....#.#", "...##.##..."],
+    bulb: ["..###..", ".#####.", "##.####", "#.#####", "#######", ".#####.", "..###..", "..#.#..", "..###.."],
+    skull: [".######.", "########", "#..##..#", "#..##..#", "###..###", ".######.", ".#.##.#."],
+    phone: ["######", "#....#", "#....#", "#....#", "#....#", "######", "##..##", "######"],
+    monitor: ["#########", "#.......#", "#.......#", "#.......#", "#########", "....#....", "..#####.."],
+    chat: [".#######.", "#########", "##.#.#.##", "#########", ".#######.", "..##.....", ".#......."],
+    flag: ["##.....", "#####..", "#######", "#####..", "##.....", "#......", "#......", "#......"],
+    dice: [".#####.", "#.###.#", "#######", "###.###", "#######", "#.###.#", ".#####."],
+    sun: ["....#....", ".#.....#.", "...###...", "..#####..", "#.#####.#", "..#####..", "...###...", ".#.....#.", "....#...."],
+    moon: ["..####.", ".##....", "##.....", "##.....", "##.....", "##.....", ".##....", "..####."],
+    plus: ["..##..", "..##..", "######", "######", "..##..", "..##.."],
+    search: [".###....", "#...#...", "#...#...", "#...#...", ".###....", "....##..", ".....##.", "......##"],
+    check: ["......#", ".....##", "#...##.", "##.##..", ".###...", "..#...."],
+    bot: ["...##...", "...##...", "########", "##.##.##", "########", "##....##", "########"],
+    close: ["##....##", "###..###", ".######.", "..####..", "..####..", ".######.", "###..###", "##....##"],
+    house: [
+      "......rr......", ".....rrrr.....", "....rrrrrr....", "...rrrrrrrr...", "..rrrrrrrrrr..", ".rrrrrrrrrrrr.", "rrrrrrrrrrrrrr",
+      ".############.", ".#ssskskssss#.", ".#sskkkkksss#.", ".#sskkkkksss#.", ".#ssskkkssss#.", ".#ssssksssss#.", ".############.",
+    ],
+  };
+  const PIX_COLORS = { "#": "currentColor", r: "var(--c-hard)", s: "var(--lcd)", k: "var(--lcd-ink)" };
+
+  function pix(name) {
+    const map = PIX[name];
+    const h = map.length;
+    const w = map[0].length;
+    let out = "";
+    for (let y = 0; y < h; y++) {
+      for (let x = 0; x < w; x++) {
+        const c = map[y].charAt(x);
+        if (c !== ".") out += `<rect x="${x}" y="${y}" width="1.05" height="1.05" fill="${PIX_COLORS[c] || "currentColor"}"/>`;
+      }
+    }
+    return `<svg class="px" viewBox="0 0 ${w} ${h}" style="width:${(w / h).toFixed(3)}em" aria-hidden="true" focusable="false" shape-rendering="crispEdges">${out}</svg>`;
+  }
+
+  const store = {
+    get(key, fallback) {
+      try {
+        const v = localStorage.getItem(key);
+        return v === null ? fallback : JSON.parse(v);
+      } catch (e) {
+        return fallback;
+      }
+    },
+    set(key, value) {
+      try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* 隐私模式等情况下写不进去，不影响浏览 */ }
+    },
+  };
+
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  const isHttps = (u) => typeof u === "string" && /^https:\/\/[^\s"'<>]+$/i.test(u);
+  const isCover = (u) => isHttps(u) || (typeof u === "string" && /^covers\/[\w.\-\/]+$/.test(u) && !u.includes(".."));
+
+  const pad2 = (n) => String(n).padStart(2, "0");
+  const localDate = (d) => `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
+  const TODAY = localDate(new Date());
+  const dayNum = (s) => Math.round(Date.parse(`${s}T00:00:00Z`) / 864e5);
+  const age = (s) => Math.max(0, dayNum(TODAY) - dayNum(s));
+  const ago = (s) => {
+    const d = age(s);
+    return d === 0 ? "今天" : d === 1 ? "昨天" : d <= 30 ? `${d} 天前` : s;
+  };
+
+  const els = {
+    grid: $("grid"), chips: $("chips"), q: $("q"), mobile: $("mobileBtn"), result: $("result"),
+    overlay: $("overlay"), dialog: $("dialog"), tpl: $("tpl"), note: $("note"), toast: $("toast"),
+  };
+
+  let GAMES = [];
+  let loadState = "loading";
+  let S = { cat: "全部", q: "", mobile: false, sort: "new" };
+  const liked = new Set(store.get("lg.liked", []));
+  const played = new Set(store.get("lg.played", []));
+  const likes = { available: false, counts: {} };
+  let reduceMotion = false;
+  try { reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) { /* 老浏览器没有 matchMedia */ }
+
+  /* ---------- 数据 ---------- */
+
+  function cleanGame(g) {
+    if (!g || typeof g !== "object" || g.removed) return null;
+    const ok = Number.isInteger(g.id) && g.id > 0 && typeof g.title === "string" && g.title && typeof g.desc === "string" &&
+      CATS[g.tag] && isHttps(g.playUrl) && typeof g.author === "string" && g.author && isHttps(g.postUrl) &&
+      /^\d{4}-\d{2}-\d{2}$/.test(g.addedAt);
+    if (!ok) {
+      console.warn("[games.json] 跳过不完整的条目", g);
+      return null;
+    }
+    return {
+      id: g.id, title: g.title, desc: g.desc, tag: g.tag, playUrl: g.playUrl, author: g.author, postUrl: g.postUrl, addedAt: g.addedAt,
+      cover: isCover(g.cover) ? g.cover : "",
+      authorAvatar: isHttps(g.authorAvatar) ? g.authorAvatar : "",
+      mobile: typeof g.mobile === "boolean" ? g.mobile : null,
+      madeWith: typeof g.madeWith === "string" ? g.madeWith.trim() : "",
+      repoUrl: isHttps(g.repoUrl) ? g.repoUrl : "",
+    };
+  }
+
+  function visitorId() {
+    let v = store.get("lg.visitor", null);
+    if (typeof v !== "string" || !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(v)) {
+      if (crypto.randomUUID) {
+        v = crypto.randomUUID();
+      } else {
+        const b = crypto.getRandomValues(new Uint8Array(16));
+        b[6] = (b[6] & 0x0f) | 0x40;
+        b[8] = (b[8] & 0x3f) | 0x80;
+        const h = [...b].map((x) => x.toString(16).padStart(2, "0")).join("");
+        v = `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`;
+      }
+      store.set("lg.visitor", v);
+    }
+    return v;
+  }
+
+  async function loadGames() {
+    try {
+      const res = await fetch(CONFIG.gamesUrl, { cache: "no-cache" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      if (!Array.isArray(data)) throw new Error("games.json 的最外层不是数组");
+      GAMES = data.map(cleanGame).filter(Boolean);
+      loadState = "ready";
+    } catch (err) {
+      console.error("读取 games.json 失败", err);
+      loadState = "error";
+    }
+  }
+
+  async function loadLikes() {
+    try {
+      const res = await fetch(CONFIG.likesApi, { headers: { Accept: "application/json" } });
+      if (!res.ok || !(res.headers.get("Content-Type") || "").includes("application/json")) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      likes.counts = data && typeof data === "object" ? data : {};
+      likes.available = true;
+    } catch (err) {
+      likes.available = false; /* 接口不可用（本地预览、额度用完等）：隐藏计数，点赞只记在本机 */
+    }
+  }
+
+  const likeCount = (g) => likes.counts[g.id] || 0;
+
+  function matches(g, q) {
+    if (!q) return true;
+    const needle = q.toLowerCase();
+    return [g.title, g.desc, g.author, g.madeWith, g.tag].some((f) => f.toLowerCase().includes(needle));
+  }
+
+  function currentList() {
+    const list = GAMES.filter((g) => (S.cat === "全部" || g.tag === S.cat) && (!S.mobile || g.mobile === true) && matches(g, S.q));
+    const byNew = (a, b) => b.addedAt.localeCompare(a.addedAt) || b.id - a.id;
+    list.sort(S.sort === "hot" && likes.available ? (a, b) => likeCount(b) - likeCount(a) || byNew(a, b) : byNew);
+    return list;
+  }
+
+  /* ---------- 渲染 ---------- */
+
+  function lcg(seed) {
+    let s = seed >>> 0;
+    return () => {
+      s = (s * 1664525 + 1013904223) >>> 0;
+      return s / 4294967296;
+    };
+  }
+
+  function dots(id) {
+    const r = lcg(id * 7919);
+    let out = "";
+    for (let i = 0; i < 6; i++) {
+      const z = [6, 8, 10, 12][Math.floor(r() * 4)];
+      out += `<i class="dot" style="left:${4 + Math.floor(r() * 50)}%;top:${10 + Math.floor(r() * 72)}%;width:${z}px;height:${z}px"></i>`;
+    }
+    return out;
+  }
+
+  const AVATARS = ["var(--c-fish)", "var(--c-classic)", "var(--c-brain)", "var(--c-hard)", "var(--av5)", "var(--av6)"];
+  function avatarColor(name) {
+    let h = 0;
+    for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
+    return AVATARS[h % AVATARS.length];
+  }
+
+  function cardHTML(g) {
+    const c = CATS[g.tag];
+    const on = liked.has(g.id);
+    const title = esc(g.title);
+    const count = likes.available ? `<b>${likeCount(g)}</b>` : "";
+    const mobileBadge = g.mobile === true ? `<span class="badge">${pix("phone")}手机可玩</span>`
+      : g.mobile === false ? `<span class="badge">${pix("monitor")}建议电脑玩</span>` : "";
+    const modelBadge = g.madeWith
+      ? `<button class="badge" type="button" data-act="model" data-model="${esc(g.madeWith)}" title="看看还有哪些是用 ${esc(g.madeWith)} 搓的">${pix("bot")}${esc(g.madeWith)}</button>` : "";
+    const avatarImg = g.authorAvatar ? `<img src="${esc(g.authorAvatar)}" alt="" loading="lazy" decoding="async" data-fallback>` : "";
+    return `<article class="card" data-id="${g.id}" style="--cat:${c.color}">
+      <a class="cover" href="${esc(g.playUrl)}" target="_blank" rel="noopener" data-act="play" aria-label="开始游戏：${title}">
+        ${dots(g.id)}<span class="art">${pix(c.icon)}</span>
+        ${g.cover ? `<img class="cover-img" src="${esc(g.cover)}" alt="" loading="lazy" decoding="async" data-fallback>` : ""}
+        <span class="tagchip">${pix(c.icon)}${esc(g.tag)}</span>
+        ${age(g.addedAt) < 7 ? '<span class="newtag">NEW</span>' : ""}
+        ${played.has(g.id) ? `<span class="played">${pix("check")}玩过</span>` : ""}
+        <span class="press"><span>PRESS START</span></span>
+      </a>
+      <button class="like${on ? " on" : ""}" type="button" data-act="like" aria-pressed="${on}" aria-label="喜爱「${title}」">${pix("heart")}${count}</button>
+      <div class="cbody">
+        <h3 class="ctitle" title="${title}">${title}</h3>
+        <p class="cdesc">${esc(g.desc)}</p>
+        <div class="badges">${mobileBadge}${modelBadge}</div>
+        <div class="meta">
+          <span class="avatar" style="background:${avatarColor(g.author)}" aria-hidden="true">${esc(g.author.charAt(0).toUpperCase())}${avatarImg}</span>
+          <a class="who" href="https://linux.do/u/${encodeURIComponent(g.author)}" target="_blank" rel="noopener">@${esc(g.author)}</a>
+          <span class="when">· ${ago(g.addedAt)}</span><span class="gid">#${g.id}</span>
+        </div>
+      </div>
+      <div class="cfoot">
+        <a class="btn primary play" href="${esc(g.playUrl)}" target="_blank" rel="noopener" data-act="play">${pix("play")}开始游戏</a>
+        <a class="btn" href="${esc(g.postUrl)}" target="_blank" rel="noopener">${pix("chat")}原帖</a>
+        ${g.repoUrl ? `<a class="btn sq" href="${esc(g.repoUrl)}" target="_blank" rel="noopener" aria-label="源码" title="源码"><span class="code">&lt;/&gt;</span></a>` : ""}
+        <button class="btn sq" type="button" data-act="report" aria-label="反馈问题" title="反馈问题">${pix("flag")}</button>
+      </div>
+    </article>`;
+  }
+
+  const slotHTML = () => `<div class="slot">${pix("plus")}<b>你的游戏也可以在这里</b><span>在主贴回复投稿模板，站长核对后就会收录</span><button class="btn" type="button" data-act="submit">去投稿</button></div>`;
+  const noticeHTML = (icon, title, text, act, label) =>
+    `<div class="notice">${pix(icon)}<b>${title}</b><span>${text}</span><button class="btn" type="button" data-act="${act}">${label}</button></div>`;
+
+  function renderChips() {
+    const base = GAMES.filter((g) => (!S.mobile || g.mobile === true) && matches(g, S.q));
+    els.chips.innerHTML = ORDER.map((c) => {
+      const n = c === "全部" ? base.length : base.filter((g) => g.tag === c).length;
+      const style = c === "全部" ? "" : ` style="--cat:${CATS[c].color}"`;
+      const icon = c === "全部" ? "" : pix(CATS[c].icon);
+      return `<button class="chip" type="button" data-act="cat" data-cat="${c}" aria-pressed="${S.cat === c}"${style}>${icon}${c}<span class="n">${n}</span></button>`;
+    }).join("");
+  }
+
+  function render() {
+    renderChips();
+    updateChipScroll();
+    if (loadState === "loading") {
+      els.result.textContent = "正在读取卡带…";
+      els.grid.innerHTML = "";
+      return;
+    }
+    if (loadState === "error") {
+      els.result.textContent = "游戏列表没读出来";
+      els.grid.innerHTML = noticeHTML("invader", "游戏列表加载失败", "可能是网络不稳，刷新一下试试", "reload", "重新加载");
+      return;
+    }
+    if (!GAMES.length) {
+      els.result.textContent = "还没有收录游戏，第一款等你来搓";
+      els.grid.innerHTML = slotHTML();
+      return;
+    }
+    const list = currentList();
+    const parts = [`${list.length} 款游戏`];
+    if (S.sort === "new") parts.push("按最新收录排序");
+    else parts.push(likes.available ? "按喜爱数排序" : "喜爱数暂时不可用，按最新收录排序");
+    if (S.q) parts.push(`搜索「${S.q}」`);
+    if (S.mobile) parts.push("只看手机能玩");
+    els.result.textContent = parts.join(" · ");
+    els.grid.innerHTML = (list.length ? list.map(cardHTML).join("")
+      : noticeHTML("invader", "没有找到符合条件的游戏", "换个关键词试试，或者去主贴催作者们多搓几个", "clear", "清除筛选")) + slotHTML();
+  }
+
+  function renderAlmanac() {
+    const now = new Date();
+    const r = lcg(now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate());
+    const pickN = (arr, n) => {
+      const a = arr.slice();
+      const out = [];
+      while (out.length < n && a.length) out.push(a.splice(Math.floor(r() * a.length), 1)[0]);
+      return out;
+    };
+    $("lcdDate").textContent = `${now.getMonth() + 1} 月 ${now.getDate()} 日 · 星期${"日一二三四五六".charAt(now.getDay())}`;
+    $("yi").textContent = pickN(YI, 3).join(" · ");
+    $("ji").textContent = pickN(JI, 3).join(" · ");
+
+    const pad3 = (n) => String(Math.min(n, 999)).padStart(3, "0");
+    const last = GAMES.reduce((m, g) => (g.addedAt > m ? g.addedAt : m), "");
+    $("stTotal").textContent = pad3(GAMES.length);
+    $("stAuthors").textContent = pad3(new Set(GAMES.map((g) => g.author.toLowerCase())).size);
+    $("stLast").textContent = last ? last.slice(5).replace("-", "/") : "--/--";
+
+    const pickEl = $("pick");
+    if (loadState === "loading") {
+      pickEl.innerHTML = '<span class="pick-txt"><span>今日推荐</span><b>正在读取卡带…</b></span>';
+      return;
+    }
+    if (loadState !== "ready" || !GAMES.length) {
+      pickEl.removeAttribute("data-id");
+      pickEl.innerHTML = loadState === "error"
+        ? '<span class="pick-txt"><span>今日推荐</span><b>卡带没读出来</b></span>'
+        : `<span class="pick-txt"><span>今日推荐</span><b>还没有收录游戏</b></span><button class="lcd-btn" type="button" data-act="submit">${pix("plus")}去投稿</button>`;
+      return;
+    }
+    const sorted = GAMES.slice().sort((a, b) => a.id - b.id);
+    const today = sorted[Math.floor(r() * sorted.length)];
+    pickEl.setAttribute("data-id", today.id);
+    pickEl.innerHTML = `<span class="pick-thumb">${pix(CATS[today.tag].icon)}</span>
+      <span class="pick-txt"><span>今日推荐</span><b>${esc(today.title)}</b></span>
+      <a class="lcd-btn" href="${esc(today.playUrl)}" target="_blank" rel="noopener" data-act="play">${pix("play")}开玩</a>`;
+  }
+
+  /* ---------- 交互 ---------- */
+
+  let toastTimer;
+  function toast(msg) {
+    els.toast.textContent = msg;
+    els.toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => els.toast.classList.remove("show"), 2600);
+  }
+
+  function selectText(el) {
+    try {
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const sel = getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    } catch (e) { /* 选不中也不影响后续操作 */ }
+  }
+
+  /* 必须在点击事件里直接调用：剪贴板写入要求由用户操作触发 */
+  function copyText(text, onOk, onFail) {
+    try {
+      if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error("no clipboard");
+      navigator.clipboard.writeText(text).then(onOk, onFail);
+    } catch (e) {
+      onFail();
+    }
+  }
+
+  let lastFocus = null;
+  let curTab = "投稿";
+  function setTab(tab, text) {
+    curTab = tab;
+    document.querySelectorAll('[data-act="tab"]').forEach((b) => b.setAttribute("aria-pressed", String(b.getAttribute("data-tab") === tab)));
+    els.tpl.textContent = text || TPL[tab];
+    els.note.innerHTML = `${pix("check")}<span>${NOTE[tab]}</span>`;
+  }
+  function openModal(tab, text) {
+    lastFocus = document.activeElement;
+    setTab(tab || "投稿", text);
+    els.overlay.hidden = false;
+    els.dialog.focus();
+  }
+  function closeModal() {
+    els.overlay.hidden = true;
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  const root = document.documentElement;
+  function effectiveTheme() {
+    const t = root.getAttribute("data-theme");
+    if (t === "light" || t === "dark") return t;
+    try { return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; } catch (e) { return "light"; }
+  }
+  function paintThemeBtn() {
+    const dark = effectiveTheme() === "dark";
+    const btn = $("themeBtn");
+    btn.innerHTML = pix(dark ? "sun" : "moon");
+    btn.setAttribute("aria-label", dark ? "切换到亮色" : "切换到暗色");
+    btn.title = dark ? "切换到亮色" : "切换到暗色";
+  }
+  function toggleTheme() {
+    const next = effectiveTheme() === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    store.set("lg.theme", next);
+    paintThemeBtn();
+  }
+
+  function markPlayed(g) {
+    if (played.has(g.id)) return;
+    played.add(g.id);
+    store.set("lg.played", Array.from(played));
+    const cover = els.grid.querySelector(`.card[data-id="${g.id}"] .cover`);
+    if (cover && !cover.querySelector(".played")) cover.insertAdjacentHTML("beforeend", `<span class="played">${pix("check")}玩过</span>`);
+  }
+
+  function setLiked(id, on) {
+    if (on) liked.add(id);
+    else liked.delete(id);
+    store.set("lg.liked", Array.from(liked));
+  }
+  function paintLike(btn, g) {
+    const on = liked.has(g.id);
+    btn.classList.toggle("on", on);
+    btn.setAttribute("aria-pressed", String(on));
+    btn.innerHTML = pix("heart") + (likes.available ? `<b>${likeCount(g)}</b>` : "");
+  }
+  async function toggleLike(g, btn) {
+    const on = !liked.has(g.id);
+    setLiked(g.id, on);
+    if (likes.available) likes.counts[g.id] = Math.max(0, likeCount(g) + (on ? 1 : -1));
+    paintLike(btn, g);
+    btn.classList.remove("pop");
+    void btn.offsetWidth;
+    btn.classList.add("pop");
+    if (on && !reduceMotion) {
+      const p = document.createElement("span");
+      p.className = "plus";
+      p.textContent = "+1";
+      btn.parentNode.appendChild(p);
+      setTimeout(() => p.remove(), 800);
+    }
+    if (!likes.available) return;
+    let status = 0;
+    try {
+      const res = await fetch(CONFIG.likesApi, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id: g.id, visitorId: visitorId(), action: on ? "like" : "unlike" }),
+      });
+      status = res.status;
+      if (!res.ok) throw new Error(`HTTP ${status}`);
+      const data = await res.json();
+      likes.counts[g.id] = data.count;
+      setLiked(g.id, data.liked);
+    } catch (err) {
+      setLiked(g.id, !on);
+      likes.counts[g.id] = Math.max(0, likeCount(g) + (on ? -1 : 1));
+      toast(status === 429 ? "点得太快了，歇一会儿再点" : "喜爱没记上，稍后再试");
+    }
+    paintLike(btn, g);
+  }
+
+  function report(g) {
+    const text = `【反馈】\n游戏：#${g.id} ${g.title}\n问题：打不开 / 内容异常 / 其他\n说明：`;
+    copyText(text, () => toast(`已复制「${g.title}」的反馈模板，粘贴到主贴回复就行`), () => {
+      openModal("反馈", text);
+      selectText(els.tpl);
+      toast("复制没成功，已选中模板，按 Ctrl+C 复制");
+    });
+    window.open(CONFIG.forumThread, "_blank", "noopener");
+  }
+
+  function lucky() {
+    if (loadState !== "ready" || !GAMES.length) {
+      toast("还没有游戏可以抽");
+      return;
+    }
+    const list = currentList();
+    if (!list.length) {
+      toast("当前筛选下没有游戏，换个条件试试");
+      return;
+    }
+    const g = list[Math.floor(Math.random() * list.length)];
+    const el = els.grid.querySelector(`.card[data-id="${g.id}"]`);
+    if (!el) return;
+    el.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+    el.classList.remove("picked");
+    void el.offsetWidth;
+    el.classList.add("picked");
+    setTimeout(() => el.classList.remove("picked"), 2000);
+    toast(`就决定是你了：「${g.title}」`);
+  }
+
+  function updateChipScroll() {
+    const max = els.chips.scrollWidth - els.chips.clientWidth;
+    $("chipsWrap").classList.toggle("can-left", els.chips.scrollLeft > 1);
+    $("chipsWrap").classList.toggle("can-right", els.chips.scrollLeft < max - 1);
+  }
+
+  /* 手机上搜索框默认收起，点顶栏的放大镜展开 */
+  function setSearchOpen(open) {
+    document.querySelector(".top").classList.toggle("searching", open);
+    $("searchToggle").setAttribute("aria-expanded", String(open));
+    if (open) els.q.focus();
+  }
+
+  function filterModel(model) {
+    els.q.value = model;
+    S.q = model;
+    render();
+    setSearchOpen(true);
+    $("wall").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+    toast(`只看用 ${model} 搓的游戏`);
+  }
+
+  function clearFilters() {
+    S = { cat: "全部", q: "", mobile: false, sort: S.sort };
+    els.q.value = "";
+    els.mobile.setAttribute("aria-pressed", "false");
+    render();
+  }
+
+  document.addEventListener("click", (e) => {
+    const t = e.target.closest("[data-act]");
+    if (!t) return;
+    const host = t.closest("[data-id]");
+    const g = host ? GAMES.find((x) => x.id === Number(host.getAttribute("data-id"))) : null;
+    switch (t.getAttribute("data-act")) {
+      case "play": if (g) markPlayed(g); break;
+      case "like": if (g) toggleLike(g, t); break;
+      case "report": if (g) report(g); break;
+      case "model": filterModel(t.getAttribute("data-model")); break;
+      case "cat": S.cat = t.getAttribute("data-cat"); render(); break;
+      case "mobile":
+        S.mobile = !S.mobile;
+        t.setAttribute("aria-pressed", String(S.mobile));
+        render();
+        break;
+      case "sort":
+        S.sort = t.getAttribute("data-sort");
+        document.querySelectorAll('[data-act="sort"]').forEach((b) => b.setAttribute("aria-pressed", String(b === t)));
+        render();
+        break;
+      case "submit": openModal("投稿"); break;
+      case "close": closeModal(); break;
+      case "tab": setTab(t.getAttribute("data-tab")); break;
+      case "copy":
+        copyText(els.tpl.textContent, () => toast(`已复制${curTab}模板，去主贴粘贴回复就行`), () => {
+          selectText(els.tpl);
+          toast("已选中模板，按 Ctrl+C 复制");
+        });
+        break;
+      case "lucky": lucky(); break;
+      case "theme": toggleTheme(); break;
+      case "clear": clearFilters(); break;
+      case "reload": location.reload(); break;
+      case "scroll": els.chips.scrollBy({ left: Number(t.getAttribute("data-dir")) * els.chips.clientWidth * 0.8 }); break;
+      case "search": setSearchOpen(!document.querySelector(".top").classList.contains("searching")); break;
+    }
+  });
+  els.overlay.addEventListener("click", (e) => { if (e.target === els.overlay) closeModal(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (!els.overlay.hidden) {
+      e.preventDefault();
+      closeModal();
+    } else if (document.activeElement === els.q && els.q.value) {
+      els.q.value = "";
+      S.q = "";
+      render();
+    }
+  });
+  els.q.addEventListener("input", () => {
+    S.q = els.q.value.trim();
+    render();
+  });
+  els.chips.addEventListener("scroll", updateChipScroll, { passive: true });
+  window.addEventListener("resize", updateChipScroll);
+  if (document.fonts) document.fonts.ready.then(updateChipScroll);
+  /* 封面、头像加载失败时去掉图片，露出下面的像素封面 / 首字母头像 */
+  document.addEventListener("error", (e) => {
+    const t = e.target;
+    if (t && t.tagName === "IMG" && t.hasAttribute("data-fallback")) t.remove();
+  }, true);
+  try { matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paintThemeBtn); } catch (e) { /* 老浏览器不支持监听 */ }
+
+  $("logo").innerHTML = pix("house");
+  $("closeBtn").innerHTML = pix("close");
+  $("searchIco").innerHTML = pix("search");
+  $("searchToggle").innerHTML = pix("search");
+  $("luckyBtn").insertAdjacentHTML("afterbegin", pix("dice"));
+  els.mobile.insertAdjacentHTML("afterbegin", pix("phone"));
+  $("threadLink").href = CONFIG.forumThread;
+  $("repoLink").href = CONFIG.repoUrl;
+  paintThemeBtn();
+  renderAlmanac();
+  render();
+
+  Promise.all([loadGames(), loadLikes()]).then(() => {
+    renderAlmanac();
+    render();
+  });
+})();
+</script>
+</body>
+</html>
