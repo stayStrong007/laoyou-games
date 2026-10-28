@@ -51,5 +51,32 @@
     "postUrl": "https://linux.do/t/topic/3057890",
     "mobile": true,
     "madeWith": "opus-5-5"
+  },
+  {
+    "id": 5,
+    "title": "429 - Rate Limited",
+    "desc": "一款以弹反为主的平面弹幕游戏（现在暂时只有第一部分）",
+    "tag": "脑洞大开",
+    "playUrl": "https://429-prologue.mack20120112.workers.dev",
+    "author": "MackMa",
+    "addedAt": "2026-10-28",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/mackma/96/2282603_2.png",
+    "postUrl": "https://linux.do/t/topic/2701073",
+    "mobile": false,
+    "madeWith": "Fable 5.1 + GPT-6 Astra"
+  },
+  {
+    "id": 6,
+    "title": "空王座",
+    "desc": "跑在浏览器里的剧情冒险 RPG",
+    "tag": "摸鱼必备",
+    "playUrl": "https://muselabs.co/empty-throne",
+    "author": "_westfall",
+    "addedAt": "2026-10-28",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/5/5/9/5593e8e488228dcc2e8f8cd505259e0b8873d0bf_2_690x362.webp",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/_westfall/96/2936092_2.png",
+    "postUrl": "https://linux.do/t/topic/3042622",
+    "mobile": true,
+    "madeWith": "Claude + Codex"
   }
 ]
