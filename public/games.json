@@ -276,5 +276,31 @@
     "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/chaoren/96/758290_2.png",
     "postUrl": "https://linux.do/t/topic/2865652",
     "mobile": true
+  },
+  {
+    "id": 23,
+    "title": "忍界纪行",
+    "desc": "逛木叶，走五大国。木叶飞舞之处，火亦生生不息",
+    "tag": "脑洞大开",
+    "playUrl": "https://naruto-cf.zendoing.com/",
+    "author": "max_reboots",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/d/d/9/dd936e12fd1f2b2db9cc9b6cba1ebfe288df1f53_2_690x383.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/max_reboots/96/341976_2.png",
+    "postUrl": "https://linux.do/t/topic/2988696",
+    "madeWith": "GPT + Claude"
+  },
+  {
+    "id": 24,
+    "title": "泡泡坦克",
+    "desc": "童年经典，勾起你的回忆",
+    "tag": "经典重制",
+    "playUrl": "https://bubble-tank.zackwill.space/",
+    "author": "ZackWill",
+    "addedAt": "2026-10-29",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/zackwill/96/1748014_2.png",
+    "postUrl": "https://linux.do/t/topic/2977334",
+    "mobile": true,
+    "madeWith": "Opus 5.5"
   }
 ]
