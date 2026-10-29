@@ -464,5 +464,18 @@
     "cover": "https://cdn3.ldstatic.com/optimized/4X/1/d/d/1dd46c5c9756f7b10abbc8df4e4c541ae21e6c8f_2_1024x698.png",
     "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/l1n/96/1803058_2.png",
     "postUrl": "https://linux.do/t/topic/3032660"
+  },
+  {
+    "id": 38,
+    "title": "潜邸",
+    "desc": "古风文字游戏",
+    "tag": "摸鱼必备",
+    "playUrl": "https://story.zerozoneyet.qzz.io/",
+    "author": "z2yacm",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/d/a/f/daf30a956b8d0361c48820328117f3386a0d2fd4_2_690x388.jpeg",
+    "postUrl": "https://linux.do/t/topic/3024280",
+    "mobile": true,
+    "madeWith": "Opus 5.5"
   }
 ]
