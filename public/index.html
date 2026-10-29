@@ -325,7 +325,7 @@ button.badge:hover{background:var(--line);color:var(--ink)}
       <h2 id="dlgTitle" data-pixel>在主贴回个帖就行</h2>
       <button class="btn sq" type="button" id="closeBtn" data-act="close" aria-label="关闭"></button>
     </div>
-    <p>投稿、修改、下架、反馈都在宣传主帖里处理，有 Linux DO 账号就够了。只收浏览器里点开就能玩、免费、不强制注册的游戏，并且要有你自己的原帖。</p>
+    <p>投稿、修改、下架、反馈都在宣传主帖里处理，有 Linux DO 账号就够了。只收浏览器里点开就能玩、免费、不强制注册的游戏，并且要是你自己做的。</p>
     <div class="steps">
       <div class="step"><i>STEP 1</i><b>复制模板</b>选下面对应的类型</div>
       <div class="step"><i>STEP 2</i><b>去主贴回复</b>填好内容贴进回帖</div>
@@ -368,13 +368,13 @@ button.badge:hover{background:var(--line);color:var(--ink)}
   };
   const ORDER = ["全部", ...Object.keys(CATS)];
   const TPL = {
-    "投稿": "【投稿】\n游戏名称：\n一句话简介：\n分类：摸鱼必备 / 经典重制 / 脑洞大开 / 硬核挑战（四选一）\n游玩地址：\n原帖地址：\n手机能玩：能 / 不能\n用什么搓的（选填）：\n开源地址（选填）：\n封面（选填）：贴一张 16:9 横屏截图，不贴就用默认封面",
+    "投稿": "【投稿】\n游戏名称：\n一句话简介：\n分类：摸鱼必备 / 经典重制 / 脑洞大开 / 硬核挑战（四选一）\n游玩地址：\n原帖地址（选填）：\n手机能玩：能 / 不能\n用什么搓的（选填）：\n开源地址（选填）：\n封面（选填）：贴一张 16:9 横屏截图，不贴就用默认封面",
     "修改": "【修改】\n游戏：#编号 或 游戏名称\n修改内容：",
     "下架": "【下架】\n游戏：#编号 或 游戏名称",
     "反馈": "【反馈】\n游戏：#编号 或 游戏名称\n问题：打不开 / 内容异常 / 其他\n说明：",
   };
   const NOTE = {
-    "投稿": "站长会核对回帖人和原帖作者是不是同一个人，只收录作者本人的投稿。",
+    "投稿": "只收录作者本人的投稿。填了原帖地址的，站长会核对回帖人是不是原帖作者。",
     "修改": "只处理这款游戏作者本人的回帖。",
     "下架": "只处理这款游戏作者本人的回帖，处理后游戏会从站里移除。",
     "反馈": "任何人都可以反馈，站长确认后处理。",
@@ -473,14 +473,15 @@ button.badge:hover{background:var(--line);color:var(--ink)}
   function cleanGame(g) {
     if (!g || typeof g !== "object" || g.removed) return null;
     const ok = Number.isInteger(g.id) && g.id > 0 && typeof g.title === "string" && g.title && typeof g.desc === "string" &&
-      CATS[g.tag] && isWebUrl(g.playUrl) && typeof g.author === "string" && g.author && isHttps(g.postUrl) &&
+      CATS[g.tag] && isWebUrl(g.playUrl) && typeof g.author === "string" && g.author &&
       /^\d{4}-\d{2}-\d{2}$/.test(g.addedAt);
     if (!ok) {
       console.warn("[games.json] 跳过不完整的条目", g);
       return null;
     }
     return {
-      id: g.id, title: g.title, desc: g.desc, tag: g.tag, playUrl: g.playUrl, author: g.author, postUrl: g.postUrl, addedAt: g.addedAt,
+      id: g.id, title: g.title, desc: g.desc, tag: g.tag, playUrl: g.playUrl, author: g.author, addedAt: g.addedAt,
+      postUrl: isHttps(g.postUrl) ? g.postUrl : "", /* 原帖选填：没有就不显示"原帖"按钮 */
       cover: isCover(g.cover) ? g.cover : "",
       authorAvatar: isHttps(g.authorAvatar) ? g.authorAvatar : "",
       mobile: typeof g.mobile === "boolean" ? g.mobile : null,
@@ -606,7 +607,7 @@ button.badge:hover{background:var(--line);color:var(--ink)}
       </div>
       <div class="cfoot">
         <a class="btn primary play" href="${esc(g.playUrl)}" target="_blank" rel="noopener" data-act="play">${pix("play")}开始游戏</a>
-        <a class="btn" href="${esc(g.postUrl)}" target="_blank" rel="noopener">${pix("chat")}原帖</a>
+        ${g.postUrl ? `<a class="btn" href="${esc(g.postUrl)}" target="_blank" rel="noopener">${pix("chat")}原帖</a>` : ""}
         ${g.repoUrl ? `<a class="btn sq" href="${esc(g.repoUrl)}" target="_blank" rel="noopener" aria-label="源码" title="源码"><span class="code">&lt;/&gt;</span></a>` : ""}
         <button class="btn sq" type="button" data-act="report" aria-label="反馈问题" title="反馈问题">${pix("flag")}</button>
       </div>

@@ -10,8 +10,9 @@ const PUBLIC_DIR = join(ROOT, "public");
 const FILE = resolve(process.argv[2] ?? join(PUBLIC_DIR, "games.json"));
 
 const TAGS = ["摸鱼必备", "经典重制", "脑洞大开", "硬核挑战"];
-const REQUIRED = ["id", "title", "desc", "tag", "playUrl", "author", "postUrl", "addedAt"];
-const OPTIONAL = ["cover", "authorAvatar", "mobile", "madeWith", "repoUrl"];
+const REQUIRED = ["id", "title", "desc", "tag", "playUrl", "author", "addedAt"];
+// postUrl 选填：有的游戏没有论坛原帖（比如站内自带留言板），网站上就不显示"原帖"按钮
+const OPTIONAL = ["postUrl", "cover", "authorAvatar", "mobile", "madeWith", "repoUrl"];
 const KNOWN = new Set([...REQUIRED, ...OPTIONAL]);
 const DESC_LIMIT = 40;
 const TODAY = new Date().toISOString().slice(0, 10);
