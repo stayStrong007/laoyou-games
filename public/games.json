@@ -50,7 +50,7 @@
     "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/hlool/96/1554784_2.png",
     "postUrl": "https://linux.do/t/topic/3057890",
     "mobile": true,
-    "madeWith": "opus-5-5"
+    "madeWith": "Opus 5.5"
   },
   {
     "id": 5,
@@ -210,5 +210,32 @@
     "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/tassel/96/686184_2.png",
     "postUrl": "https://linux.do/t/topic/2534143",
     "madeWith": "Fable"
+  },
+  {
+    "id": 18,
+    "title": "CS2",
+    "desc": "网页版 CS2，等你来战斗",
+    "tag": "经典重制",
+    "playUrl": "https://cs-f51.hanhanapi.top/",
+    "author": "rty813",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/7/1/e/71e92f0442eb97b2b7448119599cc801e3fc1e75_2_1024x508.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/rty813/96/377146_2.png",
+    "postUrl": "https://linux.do/t/topic/2850040",
+    "madeWith": "Fable 5.1"
+  },
+  {
+    "id": 19,
+    "title": "方块尖塔",
+    "desc": "上班来摸鱼开箱爬塔吧！基于 Minecraft 生物魔改的开源爬塔自走棋！",
+    "tag": "摸鱼必备",
+    "playUrl": "https://blockspire.app/",
+    "author": "Syferie",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/3/5/7/3578068b1b84c23ded6aa67af36b1f405a897397_2_1024x537.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/syferie/96/305836_2.png",
+    "postUrl": "https://linux.do/t/topic/3027601",
+    "madeWith": "Opus 5.5",
+    "repoUrl": "https://github.com/MoonWeSif/BlockSpire"
   }
 ]
