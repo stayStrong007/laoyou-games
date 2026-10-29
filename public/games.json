@@ -126,5 +126,89 @@
     "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/frank_cheung/96/48038_2.png",
     "postUrl": "https://linux.do/t/topic/2865354",
     "madeWith": "GPT-6 Astra"
+  },
+  {
+    "id": 11,
+    "title": "流体2048",
+    "desc": "2048 流体版，来试试？",
+    "tag": "脑洞大开",
+    "playUrl": "https://2048.daisheng.xyz",
+    "author": "daisheng",
+    "addedAt": "2026-10-28",
+    "postUrl": "https://linux.do/t/topic/3056188",
+    "mobile": true
+  },
+  {
+    "id": 12,
+    "title": "地球 Online · 普通人的一百万",
+    "desc": "开局五千块，程序员、公务员、铁人三项，你选什么职业？",
+    "tag": "脑洞大开",
+    "playUrl": "https://arena.aiutil.cloud/earth/",
+    "author": "AaNan",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/3/b/3/3b3a12636f11f33de50ef25304f6cda79404a0d1_2_1024x711.png",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/aanan/96/2424070_2.png",
+    "postUrl": "https://linux.do/t/topic/3057529"
+  },
+  {
+    "id": 13,
+    "title": "妖潮渡劫",
+    "desc": "东方修仙题材的像素风割草游戏，御使法器闯过妖潮，升级、构筑流派并完成渡劫",
+    "tag": "摸鱼必备",
+    "playUrl": "https://autoyeyu.top/xiantu/",
+    "author": "KoTen_Bu",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/original/4X/f/4/4/f448a19902f20d90b7d62a571a994c7757af172c.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/koten_bu/96/512584_2.png",
+    "postUrl": "https://linux.do/t/topic/3053077",
+    "mobile": true
+  },
+  {
+    "id": 14,
+    "title": "流星蝴蝶剑",
+    "desc": "还记得当年和同学在金华城、四方阵里大锤互抡、火铳偷袭的快乐吗？",
+    "tag": "经典重制",
+    "playUrl": "https://meteor-butterfly-sword-32829.app.workbuddy.host/?exe=meteor&sharecode=X46HUXWSHW",
+    "author": "cfmxy123",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/b/c/4/bc43bed81247eda2e17379c5e2c4111c5dffb5e3_2_1024x731.webp",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/cfmxy123/96/2441995_2.png",
+    "postUrl": "https://linux.do/t/topic/3087971"
+  },
+  {
+    "id": 15,
+    "title": "炉石传说",
+    "desc": "经典卡牌游戏，真人对战 + AI 对战混合，随时随地来一把",
+    "tag": "经典重制",
+    "playUrl": "https://jamfer.com/hs",
+    "author": "jamfer",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/2/9/5/295a7598d3db0f6d6f65afbfb3deb71f86f4e7fc_2_1024x688.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/jamfer/96/2754098_2.png",
+    "postUrl": "https://linux.do/t/topic/3057947"
+  },
+  {
+    "id": 16,
+    "title": "双人游戏合集",
+    "desc": "两个人 · 两支手机 · 一起过关",
+    "tag": "摸鱼必备",
+    "playUrl": "https://game.hiaicat.com/",
+    "author": "ben_ban",
+    "addedAt": "2026-10-29",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/ben_ban/96/900957_2.png",
+    "mobile": true
+  },
+  {
+    "id": 17,
+    "title": "魂斗罗",
+    "desc": "网页版魂斗罗风格横版射击游戏，像素美术配 8-bit 音效",
+    "tag": "经典重制",
+    "playUrl": "https://contra-indol.vercel.app/",
+    "author": "tassel",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/9/b/4/9b47c239d6e8a77fdc9ccf701d61f12a78af2cdd_2_1024x798.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/tassel/96/686184_2.png",
+    "postUrl": "https://linux.do/t/topic/2534143",
+    "madeWith": "Fable"
   }
 ]
