@@ -447,7 +447,11 @@
     "playUrl": "https://fps2.zard.loc.cc/",
     "author": "zard_QAQ",
     "addedAt": "2026-10-29",
-    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/zard_qaq/96/2550178_2.png"
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/8/c/b/8cb1629fa81bff224abbea693bc4224b49a6f9b1_2_690x388.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/zard_qaq/96/2550178_2.png",
+    "mobile": true,
+    "madeWith": "Fable 5",
+    "repoUrl": "https://github.com/ZardQAQ/fps-online-game"
   },
   {
     "id": 37,
