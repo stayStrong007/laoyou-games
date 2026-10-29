@@ -342,5 +342,45 @@
     "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/zding/96/2967824_2.png",
     "postUrl": "https://linux.do/t/topic/2867134",
     "madeWith": "GPT-6 Astra"
+  },
+  {
+    "id": 28,
+    "title": "引光",
+    "desc": "踩准萤群的呼吸，林子会回应你",
+    "tag": "脑洞大开",
+    "playUrl": "https://yingguang-asb.pages.dev/",
+    "author": "feng98",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/original/4X/2/c/2/2c275781ba9c146c0947e8e4a9b9aa4e85594cde.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/feng98/96/2639681_2.png",
+    "postUrl": "https://linux.do/t/topic/3046042",
+    "madeWith": "Opus 5.5"
+  },
+  {
+    "id": 29,
+    "title": "帮助 Claude 逃离原生家庭",
+    "desc": "快来帮 Claude 逃离原生家庭！",
+    "tag": "脑洞大开",
+    "playUrl": "https://dontspeakchinese.com/",
+    "author": "miliyam_bell",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/3/9/d/39deb7738fa9a5277e74a0ca12d57f4ae7bd151d_2_583x1024.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/miliyam_bell/96/1407141_2.png",
+    "postUrl": "https://linux.do/t/topic/3055201"
+  },
+  {
+    "id": 30,
+    "title": "ChefJeff · 一起出餐",
+    "desc": "人机协作、像素版胡闹厨房！",
+    "tag": "脑洞大开",
+    "playUrl": "https://chefjeff.online/",
+    "author": "belchingleo",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/0/1/2/0126190019c648de035d946b2a6dc83e449a739d_2_1024x577.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/belchingleo/96/3039270_2.png",
+    "postUrl": "https://linux.do/t/topic/3055354",
+    "mobile": true,
+    "madeWith": "Opus 5.5",
+    "repoUrl": "https://github.com/belchingleo/ChefJeff"
   }
 ]
