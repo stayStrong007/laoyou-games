@@ -237,5 +237,43 @@
     "postUrl": "https://linux.do/t/topic/3027601",
     "madeWith": "Opus 5.5",
     "repoUrl": "https://github.com/MoonWeSif/BlockSpire"
+  },
+  {
+    "id": 20,
+    "title": "The Binding of dodo",
+    "desc": "致敬《以撒的结合》的肉鸽地牢网页游戏",
+    "tag": "经典重制",
+    "playUrl": "https://waterbird-i.github.io/the-binding-of-dodo",
+    "author": "waterbird97",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/4/6/3/463c89fb5b3fcb7f564798932508d9abb2f4c421_2_1024x614.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/waterbird97/96/2544478_2.png",
+    "postUrl": "https://linux.do/t/topic/2909576",
+    "repoUrl": "https://github.com/waterbird-i/the-binding-of-dodo"
+  },
+  {
+    "id": 21,
+    "title": "熵刃 · ENTROPY BLADE",
+    "desc": "2D 动作肉鸽游戏",
+    "tag": "摸鱼必备",
+    "playUrl": "https://game.inc.re/entropy-blade/",
+    "author": "mumuhaha487",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/original/4X/9/4/1/941ddca86b92189be932f36c3e65a29d24c9065b.png",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/mumuhaha487/96/2236532_2.png",
+    "postUrl": "https://linux.do/t/topic/2996939"
+  },
+  {
+    "id": 22,
+    "title": "唐小诗环游记",
+    "desc": "2000 多首古诗，装进一个游戏里",
+    "tag": "脑洞大开",
+    "playUrl": "https://txs-yun.aizhi.site/",
+    "author": "chaoren",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/original/4X/1/a/a/1aab6ca392dedf0b7d70708370767c8fdf29c878.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/chaoren/96/758290_2.png",
+    "postUrl": "https://linux.do/t/topic/2865652",
+    "mobile": true
   }
 ]
