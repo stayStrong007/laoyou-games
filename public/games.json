@@ -382,5 +382,71 @@
     "mobile": true,
     "madeWith": "Opus 5.5",
     "repoUrl": "https://github.com/belchingleo/ChefJeff"
+  },
+  {
+    "id": 31,
+    "title": "NEXUS",
+    "desc": "梦日记类型的游戏",
+    "tag": "脑洞大开",
+    "playUrl": "https://traveritas.github.io/nexus/",
+    "author": "Traveritas",
+    "addedAt": "2026-10-29",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/traveritas/96/2961078_2.png",
+    "postUrl": "https://linux.do/t/topic/3034852",
+    "madeWith": "Opus 5.5"
+  },
+  {
+    "id": 32,
+    "title": "海龟汤调查局",
+    "desc": "一句怪事，一桌好奇的人",
+    "tag": "脑洞大开",
+    "playUrl": "https://hgt.mmstudio.games/welcome/",
+    "author": "HsiangNianian",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/4/5/5/455b5bf8db5f7ee8c0979fa9b02d4ec21ec80be0_2_472x1023.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/hsiangnianian/96/2513147_2.png",
+    "postUrl": "https://linux.do/t/topic/2938644"
+  },
+  {
+    "id": 33,
+    "title": "积案拂尘",
+    "desc": "AI 驱动的悬疑盘问游戏：向嫌疑人自由发问，从矛盾的口供里拼出真相",
+    "tag": "脑洞大开",
+    "playUrl": "https://deadpan.mmstudio.games/",
+    "author": "HsiangNianian",
+    "addedAt": "2026-10-29",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/hsiangnianian/96/2513147_2.png"
+  },
+  {
+    "id": 34,
+    "title": "ED_JSPAL — 仙剑奇侠传",
+    "desc": "仍是旧时的逍遥，仍是旧时的回忆",
+    "tag": "经典重制",
+    "playUrl": "https://naka1205.github.io/pal/",
+    "author": "agan1986",
+    "addedAt": "2026-10-29",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/agan1986/96/2345813_2.png",
+    "postUrl": "https://linux.do/t/topic/3051755"
+  },
+  {
+    "id": 35,
+    "title": "遗迹：破巢",
+    "desc": "指挥机枪小队与移动堡垒，穿过失落的玛雅遗迹。实时战术生存游戏",
+    "tag": "硬核挑战",
+    "playUrl": "https://sparkbazaar.cn/ruins-break-the-nest/",
+    "author": "shuishen49",
+    "addedAt": "2026-10-29",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/shuishen49/96/2884166_2.png",
+    "postUrl": "https://linux.do/t/topic/3067012"
+  },
+  {
+    "id": 36,
+    "title": "零区冲突",
+    "desc": "一款 FPS 多人共斗游戏",
+    "tag": "摸鱼必备",
+    "playUrl": "https://fps2.zard.loc.cc/",
+    "author": "zard_QAQ",
+    "addedAt": "2026-10-29",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/zard_qaq/96/2550178_2.png"
   }
 ]
