@@ -302,5 +302,45 @@
     "postUrl": "https://linux.do/t/topic/2977334",
     "mobile": true,
     "madeWith": "Opus 5.5"
+  },
+  {
+    "id": 25,
+    "title": "米塔",
+    "desc": "米塔 Web 版！来和米塔老婆玩耍吧！",
+    "tag": "经典重制",
+    "playUrl": "https://miside.cfnav.me/",
+    "author": "cfmxy123",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/6/e/f/6efe6de9288116fdc35a1fb41f562fb922b5036f_2_1024x903.webp",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/cfmxy123/96/2441995_2.png",
+    "postUrl": "https://linux.do/t/topic/3045471",
+    "madeWith": "GPT-6 Astra"
+  },
+  {
+    "id": 26,
+    "title": "ACHROMA",
+    "desc": "肉鸽地牢射击游戏，效果极佳，已达独游水准",
+    "tag": "硬核挑战",
+    "playUrl": "https://game.unsnow.online/ach/",
+    "author": "snowunseasonl",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/original/4X/5/8/4/584e039d441276ab77e628872e514bd81aa5f4d2.png",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/snowunseasonl/96/2708900_2.png",
+    "postUrl": "https://linux.do/t/topic/2981705",
+    "mobile": true,
+    "madeWith": "Opus 5.5"
+  },
+  {
+    "id": 27,
+    "title": "狂飙赛车 · OVERDRIVE",
+    "desc": "狂飙赛车单机 Web 游戏，纵享丝滑",
+    "tag": "摸鱼必备",
+    "playUrl": "https://gpt-kbsc.0nz.de/",
+    "author": "zding",
+    "addedAt": "2026-10-29",
+    "cover": "https://cdn3.ldstatic.com/original/4X/0/f/b/0fbc226fd56b6880a9eaf38acbe821b312a67c7e.webp",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/zding/96/2967824_2.png",
+    "postUrl": "https://linux.do/t/topic/2867134",
+    "madeWith": "GPT-6 Astra"
   }
 ]
