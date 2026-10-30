@@ -373,7 +373,7 @@
     "title": "ChefJeff · 一起出餐",
     "desc": "人机协作、像素版胡闹厨房！",
     "tag": "脑洞大开",
-    "playUrl": "https://chefjeff.online/",
+    "playUrl": "https://chefjeff.belchingleo.online/",
     "author": "belchingleo",
     "addedAt": "2026-10-29",
     "cover": "https://cdn3.ldstatic.com/optimized/4X/0/1/2/0126190019c648de035d946b2a6dc83e449a739d_2_1024x577.jpeg",
@@ -475,6 +475,34 @@
     "addedAt": "2026-10-29",
     "cover": "https://cdn3.ldstatic.com/optimized/4X/d/a/f/daf30a956b8d0361c48820328117f3386a0d2fd4_2_690x388.jpeg",
     "postUrl": "https://linux.do/t/topic/3024280",
+    "mobile": true,
+    "madeWith": "Opus 5.5"
+  },
+  {
+    "id": 39,
+    "title": "Clawd Gaiden — Way of the Crimson Claw",
+    "desc": "以 Clawd 为主角的像素风动作游戏",
+    "tag": "摸鱼必备",
+    "playUrl": "https://clawd.mack20120112.workers.dev/",
+    "author": "MackMa",
+    "addedAt": "2026-10-30",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/9/4/c/94c3c3bb88176f6b5349e745fcd62ce957c9618e_2_1024x613.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/mackma/96/2282603_2.png",
+    "postUrl": "https://linux.do/t/topic/3000866",
+    "mobile": false,
+    "madeWith": "Opus 5.5"
+  },
+  {
+    "id": 40,
+    "title": "SOULFORGE 灵魂锻炉",
+    "desc": "超级融合怪，肉鸽割草类爽游",
+    "tag": "摸鱼必备",
+    "playUrl": "https://soulforge.glasden.top/",
+    "author": "Glasden",
+    "addedAt": "2026-10-30",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/3/c/2/3c23b0bd3cf45f8f346f7c0a2499a11a1ecf2f9d_2_1024x575.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/glasden/96/2936864_2.png",
+    "postUrl": "https://linux.do/t/topic/2986886",
     "mobile": true,
     "madeWith": "Opus 5.5"
   }
