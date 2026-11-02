@@ -505,5 +505,30 @@
     "postUrl": "https://linux.do/t/topic/2986886",
     "mobile": true,
     "madeWith": "Opus 5.5"
+  },
+  {
+    "id": 41,
+    "title": "星野渔猎 · 夜灵平原",
+    "desc": "参照《星际战甲》的平原捕鱼，目前只有一个地图，部分鱼、皮肤、MOD",
+    "tag": "摸鱼必备",
+    "playUrl": "https://ccr.zhuoran.de/",
+    "author": "Zhuoran",
+    "addedAt": "2026-11-02",
+    "cover": "https://cdn3.ldstatic.com/optimized/4X/3/0/c/30c18fe466731713f91b51205166b3e5c49876f3_2_690x388.jpeg",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/zhuoran/96/736223_2.png",
+    "mobile": true,
+    "madeWith": "GPT-6.1 Sol + DeepSeek V4.1"
+  },
+  {
+    "id": 42,
+    "title": "人类基准测试",
+    "desc": "包含反应速度、瞄准、专注、记忆、视觉追踪、色觉、时间感知和空间思维等测试",
+    "tag": "摸鱼必备",
+    "playUrl": "https://picktests.com/zh/",
+    "author": "Nalife520",
+    "addedAt": "2026-11-02",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/nalife520/96/483740_2.png",
+    "postUrl": "https://linux.do/t/topic/3053634",
+    "mobile": true
   }
 ]
