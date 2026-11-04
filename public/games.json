@@ -530,5 +530,18 @@
     "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/nalife520/96/483740_2.png",
     "postUrl": "https://linux.do/t/topic/3053634",
     "mobile": true
+  },
+  {
+    "id": 43,
+    "title": "三灯战记",
+    "desc": "Sonnet 抽卡的战棋游戏",
+    "tag": "摸鱼必备",
+    "playUrl": "https://three-lanterns-tactics-nov04.workspace-445166.chatgpt.site/",
+    "author": "sczerg",
+    "addedAt": "2026-11-04",
+    "cover": "https://cdn3.ldstatic.com/original/4X/b/3/8/b38e1967c1da17a60d404db6aa93a1b61609c3c1.jpeg",
+    "postUrl": "https://linux.do/t/topic/3119829",
+    "mobile": false,
+    "madeWith": "Sonnet 5.5 + GPT-6.1 Sol + Gemini 4"
   }
 ]
