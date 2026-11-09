@@ -543,5 +543,16 @@
     "postUrl": "https://linux.do/t/topic/3119829",
     "mobile": false,
     "madeWith": "Sonnet 5.5 + GPT-6.1 Sol + Gemini 4"
+  },
+  {
+    "id": 44,
+    "title": "尘外长明",
+    "desc": "身在尘外，道心长明。国风修仙在线潜修 RPG",
+    "tag": "摸鱼必备",
+    "playUrl": "https://game.shiyu.dev/",
+    "author": "Drizzle",
+    "addedAt": "2026-11-09",
+    "authorAvatar": "https://cdn.ldstatic.com/user_avatar/linux.do/drizzle/96/285422_2.png",
+    "mobile": true
   }
 ]
